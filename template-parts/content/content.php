@@ -1,0 +1,91 @@
+<?php
+/**
+ * Trade Sphare Pro Post Content
+ *
+ * @package TradeSpharePro
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'ts-post-card' ); ?>>
+
+	<?php if ( has_post_thumbnail() ) : ?>
+
+		<a
+			class="ts-post-thumbnail"
+			href="<?php the_permalink(); ?>"
+			aria-label="<?php echo esc_attr( 'Read: ' . get_the_title() ); ?>"
+		>
+			<?php
+			the_post_thumbnail(
+				'trade-sphare-pro-card',
+				array(
+					'loading' => 'lazy',
+				)
+			);
+			?>
+		</a>
+
+	<?php endif; ?>
+
+	<header class="ts-post-header">
+
+		<div class="ts-post-meta">
+
+			<time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
+				<?php echo esc_html( get_the_date() ); ?>
+			</time>
+
+			<?php if ( get_the_author() ) : ?>
+
+				<span>
+					<?php
+					printf(
+						esc_html__( 'By %s', 'trade-sphare-pro' ),
+						esc_html( get_the_author() )
+					);
+					?>
+				</span>
+
+			<?php endif; ?>
+
+		</div>
+
+		<h2 class="ts-post-title">
+			<a href="<?php the_permalink(); ?>">
+				<?php the_title(); ?>
+			</a>
+		</h2>
+
+	</header>
+
+	<?php if ( has_excerpt() ) : ?>
+
+		<div class="ts-post-excerpt">
+			<?php the_excerpt(); ?>
+		</div>
+
+	<?php else : ?>
+
+		<div class="ts-post-excerpt">
+			<?php echo esc_html( trade_sphare_pro_get_excerpt( 30 ) ); ?>
+		</div>
+
+	<?php endif; ?>
+
+	<footer class="ts-post-footer">
+
+		<a
+			class="ts-read-more"
+			href="<?php the_permalink(); ?>"
+			aria-label="<?php echo esc_attr( 'Read: ' . get_the_title() ); ?>"
+		>
+			<?php esc_html_e( 'Read Article →', 'trade-sphare-pro' ); ?>
+		</a>
+
+	</footer>
+
+</article>
