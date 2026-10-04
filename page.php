@@ -113,7 +113,21 @@ get_header();
 
 			</div>
 
-			<?php get_sidebar(); ?>
+			<?php
+$ts_is_woocommerce_page = false;
+
+if ( function_exists( 'is_woocommerce' ) ) {
+	$ts_is_woocommerce_page =
+		is_woocommerce()
+		|| is_cart()
+		|| is_checkout()
+		|| is_account_page();
+}
+
+if ( ! $ts_is_woocommerce_page ) :
+	?>
+	<?php get_sidebar(); ?>
+<?php endif; ?>
 
 		</div>
 

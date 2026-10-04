@@ -1,0 +1,393 @@
+/* =========================================================
+   TRADE SPHARE PRO - RTL
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL DIRECTION
+========================================================= */
+
+html[dir="rtl"] {
+	direction: rtl;
+}
+
+html[dir="rtl"] body {
+	direction: rtl;
+	text-align: right;
+}
+
+
+/* =========================================================
+   GLOBAL FORMS
+========================================================= */
+
+html[dir="rtl"] input,
+html[dir="rtl"] textarea,
+html[dir="rtl"] select {
+	text-align: right;
+}
+
+html[dir="rtl"] input[type="number"],
+html[dir="rtl"] input[type="tel"],
+html[dir="rtl"] input[type="email"],
+html[dir="rtl"] input[type="url"] {
+	direction: ltr;
+	text-align: left;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+html[dir="rtl"] .ts-header-inner {
+	direction: rtl;
+}
+
+html[dir="rtl"] .ts-navigation .ts-menu {
+	direction: rtl;
+}
+
+html[dir="rtl"] .ts-topbar-inner {
+	direction: rtl;
+}
+
+html[dir="rtl"] .ts-navigation-wrapper .ts-menu>li {
+	direction: rtl;
+}
+
+
+/* =========================================================
+   BUTTONS / LINKS
+========================================================= */
+
+html[dir="rtl"] .ts-button,
+html[dir="rtl"] .button {
+	direction: rtl;
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+html[dir="rtl"] .ts-product-card {
+	direction: rtl;
+	text-align: right;
+}
+
+html[dir="rtl"] .ts-product-card-content {
+	text-align: right;
+}
+
+html[dir="rtl"] .ts-product-card-category {
+	text-align: right;
+}
+
+html[dir="rtl"] .ts-product-card-title {
+	text-align: right;
+}
+
+html[dir="rtl"] .ts-product-card-price {
+	text-align: right;
+}
+
+html[dir="rtl"] .ts-product-card-action {
+	text-align: right;
+}
+
+
+/*
+ * Stars remain left-to-right internally.
+ */
+html[dir="rtl"] .ts-stars {
+	direction: ltr;
+}
+
+html[dir="rtl"] .ts-stars-empty,
+html[dir="rtl"] .ts-stars-filled {
+	direction: ltr;
+	left: 0;
+	right: auto;
+}
+
+
+/* =========================================================
+   SHOP
+========================================================= */
+
+html[dir="rtl"] .ts-shop-page {
+	text-align: right;
+}
+
+html[dir="rtl"] .ts-shop-toolbar {
+	direction: rtl;
+}
+
+html[dir="rtl"] .ts-shop-toolbar .woocommerce-ordering select {
+	text-align: right;
+}
+
+
+/* =========================================================
+   SINGLE PRODUCT
+========================================================= */
+
+html[dir="rtl"] .ts-single-product-summary {
+	text-align: right;
+}
+
+html[dir="rtl"] .ts-single-product-summary .variations td,
+html[dir="rtl"] .ts-single-product-summary .variations th {
+	text-align: right;
+}
+
+html[dir="rtl"] .ts-single-product-summary .product_meta {
+	text-align: right;
+}
+
+
+/* =========================================================
+   CART
+========================================================= */
+
+html[dir="rtl"] .ts-cart-page {
+	text-align: right;
+}
+
+html[dir="rtl"] .ts-cart-table th,
+html[dir="rtl"] .ts-cart-table td {
+	text-align: right;
+}
+
+html[dir="rtl"] .ts-cart-remove {
+	direction: ltr;
+}
+
+html[dir="rtl"] .ts-cart-summary .shop_table th,
+html[dir="rtl"] .ts-cart-summary .shop_table td {
+	text-align: right;
+}
+
+
+/* =========================================================
+   CHECKOUT
+========================================================= */
+
+html[dir="rtl"] .woocommerce-checkout {
+	direction: rtl;
+	text-align: right;
+}
+
+html[dir="rtl"] .woocommerce-checkout #payment {
+	text-align: right;
+}
+
+html[dir="rtl"] .woocommerce-checkout .payment_methods {
+	text-align: right;
+}
+
+
+/* =========================================================
+   ACCOUNT
+========================================================= */
+
+html[dir="rtl"] .ts-my-account {
+	text-align: right;
+}
+
+html[dir="rtl"] .ts-account-navigation {
+	text-align: right;
+}
+
+html[dir="rtl"] .ts-account-navigation ul {
+	direction: rtl;
+}
+
+html[dir="rtl"] .ts-my-account-content {
+	text-align: right;
+}
+
+html[dir="rtl"] .woocommerce-MyAccount-content {
+	text-align: right;
+}
+
+
+/* =========================================================
+   NOTICES
+========================================================= */
+
+html[dir="rtl"] .woocommerce-notices-wrapper,
+html[dir="rtl"] .woocommerce-message,
+html[dir="rtl"] .woocommerce-info,
+html[dir="rtl"] .woocommerce-error {
+	direction: rtl;
+	text-align: right;
+}
+
+html[dir="rtl"] .woocommerce-message,
+html[dir="rtl"] .woocommerce-info,
+html[dir="rtl"] .woocommerce-error {
+	padding-right: 3.5em;
+	padding-left: 1.5em;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+html[dir="rtl"] .ts-site-footer {
+	text-align: right;
+}
+
+html[dir="rtl"] .ts-footer-menu {
+	text-align: right;
+}
+
+html[dir="rtl"] .ts-footer-bottom {
+	direction: rtl;
+}
+
+html[dir="rtl"] .ts-footer-menu a:hover,
+html[dir="rtl"] .ts-footer-menu a:focus-visible {
+	transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+	html[dir="rtl"] .ts-navigation {
+		right: 0;
+		left: 0;
+	}
+
+	html[dir="rtl"] .ts-navigation .ts-menu>li>a {
+		text-align: right;
+	}
+
+	html[dir="rtl"] .ts-footer-bottom {
+		align-items: flex-start;
+	}
+}
+
+/* =========================================================
+   FINAL RTL POLISH
+========================================================= */
+
+html[dir="rtl"] .woocommerce,
+html[dir="rtl"] .woocommerce-page {
+	direction: rtl;
+
+	text-align: right;
+}
+
+html[dir="rtl"] .woocommerce-message,
+html[dir="rtl"] .woocommerce-info,
+html[dir="rtl"] .woocommerce-error {
+	border-radius: 10px;
+
+	font-size: 12px;
+
+	line-height: 1.8;
+}
+
+html[dir="rtl"] .woocommerce-message::before,
+html[dir="rtl"] .woocommerce-info::before,
+html[dir="rtl"] .woocommerce-error::before {
+	right: 1em;
+	left: auto;
+}
+
+html[dir="rtl"] .woocommerce-message,
+html[dir="rtl"] .woocommerce-info,
+html[dir="rtl"] .woocommerce-error {
+	padding-right: 3.5em;
+	padding-left: 1.5em;
+}
+
+
+/* Tables */
+
+html[dir="rtl"] .woocommerce table.shop_table {
+	border-collapse: separate;
+
+	border-spacing: 0;
+}
+
+html[dir="rtl"] .woocommerce table.shop_table th,
+html[dir="rtl"] .woocommerce table.shop_table td {
+	text-align: right;
+}
+
+
+/* Quantity */
+
+html[dir="rtl"] .woocommerce .quantity .qty {
+	direction: ltr;
+	text-align: center;
+}
+
+
+/* Product gallery controls */
+
+html[dir="rtl"] .woocommerce div.product div.images .flex-control-thumbs {
+	direction: rtl;
+}
+
+
+/* Product summary */
+
+html[dir="rtl"] .woocommerce div.product .summary {
+	text-align: right;
+}
+
+
+/* Tabs */
+
+html[dir="rtl"] .woocommerce div.product .woocommerce-tabs ul.tabs {
+	direction: rtl;
+}
+
+html[dir="rtl"] .woocommerce div.product .woocommerce-tabs ul.tabs li {
+	margin: 0 0 0 8px;
+}
+
+
+/* Account */
+
+html[dir="rtl"] .woocommerce-account .woocommerce-MyAccount-content {
+	text-align: right;
+}
+
+html[dir="rtl"] .woocommerce-account .woocommerce-MyAccount-navigation {
+	text-align: right;
+}
+
+
+/* Checkout payment */
+
+html[dir="rtl"] .woocommerce-checkout #payment {
+	text-align: right;
+}
+
+html[dir="rtl"] .woocommerce-checkout #payment .payment_methods {
+	text-align: right;
+}
+
+
+/* Focus */
+
+html[dir="rtl"] a:focus-visible,
+html[dir="rtl"] button:focus-visible,
+html[dir="rtl"] input:focus-visible,
+html[dir="rtl"] select:focus-visible,
+html[dir="rtl"] textarea:focus-visible {
+	outline: 2px solid var(--ts-primary);
+
+	outline-offset: 2px;
+}

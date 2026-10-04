@@ -45,3 +45,18 @@ require_once TRADE_SPHARE_PRO_PATH . '/inc/customizer.php';
  * Widgets.
  */
 require_once TRADE_SPHARE_PRO_PATH . '/inc/widgets.php';
+
+/**
+ * WooCommerce.
+ */
+if ( class_exists( 'WooCommerce' ) ) {
+	require_once TRADE_SPHARE_PRO_PATH . '/inc/woocommerce.php';
+}
+
+/**
+ * WooCommerce Arabic.
+ */
+if ( class_exists( 'WooCommerce' ) ) {
+	require_once TRADE_SPHARE_PRO_PATH . '/inc/woocommerce-ar.php';
+}
+

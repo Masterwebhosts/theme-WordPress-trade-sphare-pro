@@ -1,0 +1,310 @@
+/* =========================================================
+   TRADE SPHARE PRO - FOOTER
+========================================================= */
+
+.ts-site-footer {
+	margin-top: 80px;
+	padding-top: 70px;
+
+	color: #ffffff;
+
+	background:
+		linear-gradient(
+			135deg,
+			var(--ts-navy-950) 0%,
+			var(--ts-navy-900) 100%
+	);
+}
+
+.ts-footer-main {
+	display: grid;
+
+	grid-template-columns:
+		minmax(280px, 1.7fr)
+		repeat(3, minmax(140px, 1fr));
+
+	gap: 50px;
+
+	padding-bottom: 55px;
+}
+
+.ts-footer-brand,
+.ts-footer-column {
+	min-width: 0;
+}
+
+/* Brand */
+
+.ts-footer-logo {
+	display: inline-flex;
+	align-items: center;
+
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.ts-footer-logo:hover,
+.ts-footer-logo:focus-visible {
+	color: #ffffff;
+}
+
+.ts-footer-logo .custom-logo {
+	display: block;
+
+	width: auto;
+	max-width: 190px;
+	max-height: 52px;
+}
+
+.ts-footer-logo-text {
+	display: inline-block;
+
+	color: #ffffff;
+
+	font-size: 24px;
+	font-weight: 800;
+	line-height: 1.2;
+}
+
+.ts-footer-description {
+	max-width: 430px;
+
+	margin: 18px 0 0;
+
+	color: #cbd5e1;
+
+	font-size: 15px;
+	line-height: 1.8;
+}
+
+.ts-footer-tagline {
+	max-width: 430px;
+
+	margin: 12px 0 0;
+
+	color: #94a3b8;
+
+	font-size: 14px;
+	line-height: 1.8;
+}
+
+/* Columns */
+
+.ts-footer-heading {
+	margin: 0 0 18px;
+
+	color: #ffffff;
+
+	font-size: 16px;
+	font-weight: 800;
+	line-height: 1.4;
+}
+
+.ts-footer-nav {
+	margin: 0;
+}
+
+.ts-footer-menu {
+	display: flex;
+	flex-direction: column;
+
+	gap: 10px;
+
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+.ts-footer-menu li {
+	margin: 0;
+	padding: 0;
+}
+
+.ts-footer-menu a {
+	display: inline-flex;
+	align-items: center;
+
+	padding: 2px 0;
+
+	color: #94a3b8;
+
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.7;
+
+	text-decoration: none;
+
+	transition:
+		color .2s ease,
+		transform .2s ease;
+}
+
+.ts-footer-menu a:hover,
+.ts-footer-menu a:focus-visible {
+	color: #ffffff;
+	transform: translateX(-3px);
+}
+
+/* Bottom */
+
+.ts-footer-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	gap: 20px;
+
+	min-height: 70px;
+
+	border-top: 1px solid rgba(255, 255, 255, .10);
+}
+
+.ts-footer-copyright {
+	color: #64748b;
+
+	font-size: 13px;
+	line-height: 1.6;
+}
+
+.ts-footer-bottom-links {
+	display: flex;
+	align-items: center;
+
+	gap: 15px;
+}
+
+.ts-footer-bottom-links a {
+	color: #94a3b8;
+
+	font-size: 13px;
+	text-decoration: none;
+
+	transition: color .2s ease;
+}
+
+.ts-footer-bottom-links a:hover,
+.ts-footer-bottom-links a:focus-visible {
+	color: #ffffff;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+	.ts-site-footer {
+		margin-top: 60px;
+		padding-top: 55px;
+	}
+
+	.ts-footer-main {
+		grid-template-columns:
+			minmax(0, 1.5fr)
+			repeat(2, minmax(140px, 1fr));
+
+		gap: 40px;
+	}
+
+	.ts-footer-brand {
+		grid-column: 1 / -1;
+	}
+
+	.ts-footer-description,
+	.ts-footer-tagline {
+		max-width: 650px;
+	}
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+	.ts-site-footer {
+		margin-top: 50px;
+		padding-top: 40px;
+	}
+
+	.ts-footer-main {
+		grid-template-columns: 1fr 1fr;
+
+		gap: 30px 24px;
+
+		padding-bottom: 40px;
+	}
+
+	.ts-footer-brand {
+		grid-column: 1 / -1;
+	}
+
+	.ts-footer-logo .custom-logo {
+		max-width: 165px;
+		max-height: 45px;
+	}
+
+	.ts-footer-logo-text {
+		font-size: 21px;
+	}
+
+	.ts-footer-description,
+	.ts-footer-tagline {
+		max-width: 100%;
+	}
+
+	.ts-footer-description {
+		margin-top: 15px;
+		font-size: 14px;
+	}
+
+	.ts-footer-tagline {
+		font-size: 13px;
+	}
+
+	.ts-footer-heading {
+		margin-bottom: 14px;
+		font-size: 15px;
+	}
+
+	.ts-footer-menu {
+		gap: 8px;
+	}
+
+	.ts-footer-menu a {
+		padding: 5px 0;
+		font-size: 13px;
+	}
+
+	.ts-footer-bottom {
+		min-height: 65px;
+
+		align-items: flex-start;
+		justify-content: center;
+
+		flex-direction: column;
+
+		gap: 5px;
+
+		padding-block: 12px;
+	}
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+	.ts-footer-main {
+		grid-template-columns: 1fr;
+	}
+
+	.ts-footer-bottom-links {
+		display: none;
+	}
+}
