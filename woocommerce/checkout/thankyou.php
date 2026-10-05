@@ -7,35 +7,17 @@
 
 defined( 'ABSPATH' ) || exit;
 
-if ( ! $order instanceof WC_Order ) :
+if ( ! $order instanceof WC_Order ) {
 	?>
-
 	<section class="ts-order-received-page">
-
 		<div class="ts-container">
-
 			<div class="ts-order-received-card ts-order-received-invalid">
-
-				<div
-					class="ts-order-received-icon"
-					aria-hidden="true"
-				>
-					!
-				</div>
-
-				<span class="ts-order-eyebrow">
-					<?php
-					esc_html_e(
-						'Ø§Ù„Ø·Ù„Ø¨',
-						'trade-sphare-pro'
-					);
-					?>
-				</span>
+				<div class="ts-order-received-icon">!</div>
 
 				<h1>
 					<?php
 					esc_html_e(
-						'ØªØ¹Ø°Ø± Ø§Ù„Ø¹Ø«ÙˆØ± Ø¹Ù„Ù‰ Ø§Ù„Ø·Ù„Ø¨',
+						'تعذر العثور على الطلب',
 						'trade-sphare-pro'
 					);
 					?>
@@ -44,37 +26,18 @@ if ( ! $order instanceof WC_Order ) :
 				<p>
 					<?php
 					esc_html_e(
-						'ÙŠØ±Ø¬Ù‰ Ù…Ø±Ø§Ø¬Ø¹Ø© Ø¨Ø±ÙŠØ¯Ùƒ Ø§Ù„Ø¥Ù„ÙƒØªØ±ÙˆÙ†ÙŠ Ø£Ùˆ Ø§Ù„ØªÙˆØ§ØµÙ„ Ù…Ø¹ Ø§Ù„Ø¯Ø¹Ù….',
+						'يرجى مراجعة بريدك الإلكتروني أو التواصل مع الدعم.',
 						'trade-sphare-pro'
 					);
 					?>
 				</p>
-
-				<div class="ts-order-actions">
-
-					<a
-						class="ts-button"
-						href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>"
-					>
-						<?php
-						esc_html_e(
-							'Ø§Ù„Ø¹ÙˆØ¯Ø© Ø¥Ù„Ù‰ Ø§Ù„Ù…ØªØ¬Ø±',
-							'trade-sphare-pro'
-						);
-						?>
-					</a>
-
-				</div>
-
 			</div>
-
 		</div>
-
 	</section>
-
 	<?php
+
 	return;
-endif;
+}
 
 do_action(
 	'woocommerce_before_thankyou',
@@ -86,17 +49,6 @@ $is_shamcash = 'ts_shamcash' === $order->get_payment_method();
 $transaction_id = $order->get_meta(
 	'_ts_shamcash_transaction_id'
 );
-
-$order_status = $order->get_status();
-
-$is_payment_pending = in_array(
-	$order_status,
-	array(
-		'pending',
-		'on-hold',
-	),
-	true
-);
 ?>
 
 <section class="ts-order-received-page">
@@ -105,23 +57,19 @@ $is_payment_pending = in_array(
 
 		<div class="ts-order-received-card">
 
-			<!-- =================================================
-			     SUCCESS HEADER
-			================================================== -->
-
 			<div class="ts-order-success">
 
 				<div
 					class="ts-order-success-icon"
 					aria-hidden="true"
 				>
-					âœ“
+					✓
 				</div>
 
 				<span class="ts-order-eyebrow">
 					<?php
 					esc_html_e(
-						'ØªÙ… Ø§Ø³ØªÙ„Ø§Ù… Ø§Ù„Ø·Ù„Ø¨',
+						'تم استلام الطلب',
 						'trade-sphare-pro'
 					);
 					?>
@@ -130,7 +78,7 @@ $is_payment_pending = in_array(
 				<h1>
 					<?php
 					esc_html_e(
-						'Ø´ÙƒØ±Ù‹Ø§ Ù„Ùƒ! ØªÙ… Ø§Ø³ØªÙ„Ø§Ù… Ø·Ù„Ø¨Ùƒ Ø¨Ù†Ø¬Ø§Ø­.',
+						'شكرًا لك! تم استلام طلبك بنجاح.',
 						'trade-sphare-pro'
 					);
 					?>
@@ -138,26 +86,17 @@ $is_payment_pending = in_array(
 
 				<p>
 					<?php
-					if ( $is_payment_pending ) {
-						esc_html_e(
-							'Ø·Ù„Ø¨Ùƒ Ø§Ù„Ø¢Ù† Ù‚ÙŠØ¯ Ø§Ù„Ù…Ø±Ø§Ø¬Ø¹Ø© ÙˆØ³ÙŠØªÙ… ØªØ­Ø¯ÙŠØ« Ø­Ø§Ù„ØªÙ‡ Ø¨Ø¹Ø¯ Ø§Ù„ØªØ­Ù‚Ù‚ Ù…Ù† Ø§Ù„Ø¯ÙØ¹.',
-							'trade-sphare-pro'
-						);
-					} else {
-						esc_html_e(
-							'ØªÙ… ØªØ³Ø¬ÙŠÙ„ Ø·Ù„Ø¨Ùƒ Ø¨Ù†Ø¬Ø§Ø­. ÙŠÙ…ÙƒÙ†Ùƒ Ù…ØªØ§Ø¨Ø¹Ø© Ø­Ø§Ù„ØªÙ‡ Ù…Ù† Ø®Ù„Ø§Ù„ Ø­Ø³Ø§Ø¨Ùƒ.',
-							'trade-sphare-pro'
-						);
-					}
+					esc_html_e(
+						'طلبك الآن قيد المراجعة وسيتم تحديث حالته بعد التحقق من الدفع.',
+						'trade-sphare-pro'
+					);
 					?>
 				</p>
 
 			</div>
 
 
-			<!-- =================================================
-			     ORDER OVERVIEW
-			================================================== -->
+			<!-- Order overview -->
 
 			<div class="ts-order-overview">
 
@@ -166,13 +105,13 @@ $is_payment_pending = in_array(
 					<span>
 						<?php
 						esc_html_e(
-							'Ø±Ù‚Ù… Ø§Ù„Ø·Ù„Ø¨',
+							'رقم الطلب',
 							'trade-sphare-pro'
 						);
 						?>
 					</span>
 
-					<strong dir="ltr">
+					<strong>
 						<?php echo esc_html( $order->get_order_number() ); ?>
 					</strong>
 
@@ -184,7 +123,7 @@ $is_payment_pending = in_array(
 					<span>
 						<?php
 						esc_html_e(
-							'Ø§Ù„ØªØ§Ø±ÙŠØ®',
+							'التاريخ',
 							'trade-sphare-pro'
 						);
 						?>
@@ -208,7 +147,7 @@ $is_payment_pending = in_array(
 					<span>
 						<?php
 						esc_html_e(
-							'Ø§Ù„Ø¥Ø¬Ù…Ø§Ù„ÙŠ',
+							'الإجمالي',
 							'trade-sphare-pro'
 						);
 						?>
@@ -230,7 +169,7 @@ $is_payment_pending = in_array(
 					<span>
 						<?php
 						esc_html_e(
-							'Ø·Ø±ÙŠÙ‚Ø© Ø§Ù„Ø¯ÙØ¹',
+							'طريقة الدفع',
 							'trade-sphare-pro'
 						);
 						?>
@@ -249,54 +188,45 @@ $is_payment_pending = in_array(
 			</div>
 
 
-			<!-- =================================================
-			     SHAM CASH
-			================================================== -->
-
 			<?php if ( $is_shamcash ) : ?>
+
+				<!-- Sham Cash -->
 
 				<div class="ts-shamcash-order-card">
 
 					<div class="ts-shamcash-order-header">
 
-						<div>
+						<span class="ts-shamcash-order-badge">
+							<?php
+							esc_html_e(
+								'شام كاش',
+								'trade-sphare-pro'
+							);
+							?>
+						</span>
 
-							<span class="ts-shamcash-order-badge">
-								<?php
-								esc_html_e(
-									'Ø´Ø§Ù… ÙƒØ§Ø´',
-									'trade-sphare-pro'
-								);
-								?>
-							</span>
-
-							<h2>
-								<?php
-								esc_html_e(
-									'Ø¨ÙŠØ§Ù†Ø§Øª Ø§Ù„Ø¯ÙØ¹',
-									'trade-sphare-pro'
-								);
-								?>
-							</h2>
-
-						</div>
+						<h2>
+							<?php
+							esc_html_e(
+								'بيانات الدفع',
+								'trade-sphare-pro'
+							);
+							?>
+						</h2>
 
 					</div>
 
 
 					<div class="ts-shamcash-order-status">
 
-						<span
-							class="ts-status-dot"
-							aria-hidden="true"
-						></span>
+						<span class="ts-status-dot"></span>
 
 						<div>
 
 							<strong>
 								<?php
 								esc_html_e(
-									'Ø§Ù„Ø¯ÙØ¹ Ù‚ÙŠØ¯ Ø§Ù„ØªØ­Ù‚Ù‚',
+									'الدفع قيد التحقق',
 									'trade-sphare-pro'
 								);
 								?>
@@ -305,7 +235,7 @@ $is_payment_pending = in_array(
 							<p>
 								<?php
 								esc_html_e(
-									'Ø³ÙŠØªÙ… ØªØ£ÙƒÙŠØ¯ Ø§Ù„Ø¯ÙØ¹ Ø¨Ø¹Ø¯ Ù…Ø±Ø§Ø¬Ø¹Ø© Ø¹Ù…Ù„ÙŠØ© Ø§Ù„ØªØ­ÙˆÙŠÙ„.',
+									'سيتم تأكيد الدفع بعد مراجعة عملية التحويل.',
 									'trade-sphare-pro'
 								);
 								?>
@@ -323,7 +253,7 @@ $is_payment_pending = in_array(
 							<span>
 								<?php
 								esc_html_e(
-									'Ø±Ù‚Ù… Ø§Ù„Ø¹Ù…Ù„ÙŠØ©',
+									'رقم العملية',
 									'trade-sphare-pro'
 								);
 								?>
@@ -342,16 +272,14 @@ $is_payment_pending = in_array(
 			<?php endif; ?>
 
 
-			<!-- =================================================
-			     NEXT STEPS
-			================================================== -->
+			<!-- Customer message -->
 
 			<div class="ts-order-next-steps">
 
 				<h2>
 					<?php
 					esc_html_e(
-						'Ù…Ø§Ø°Ø§ Ø¨Ø¹Ø¯ØŸ',
+						'ماذا بعد؟',
 						'trade-sphare-pro'
 					);
 					?>
@@ -360,7 +288,7 @@ $is_payment_pending = in_array(
 				<p>
 					<?php
 					esc_html_e(
-						'ÙŠÙ…ÙƒÙ†Ùƒ Ù…ØªØ§Ø¨Ø¹Ø© Ø­Ø§Ù„Ø© Ø§Ù„Ø·Ù„Ø¨ Ù…Ù† Ø­Ø³Ø§Ø¨ÙƒØŒ ÙˆØ³Ù†Ø±Ø³Ù„ Ù„Ùƒ ØªØ­Ø¯ÙŠØ«Ø§Øª Ø§Ù„Ø·Ù„Ø¨ Ø¹Ù†Ø¯ ØªÙˆÙØ±Ù‡Ø§.',
+						'يمكنك متابعة حالة الطلب من حسابك، وسنرسل لك تحديثات الطلب عند توفرها.',
 						'trade-sphare-pro'
 					);
 					?>
@@ -369,9 +297,7 @@ $is_payment_pending = in_array(
 			</div>
 
 
-			<!-- =================================================
-			     ACTIONS
-			================================================== -->
+			<!-- Actions -->
 
 			<div class="ts-order-actions">
 
@@ -381,7 +307,7 @@ $is_payment_pending = in_array(
 				>
 					<?php
 					esc_html_e(
-						'Ù…ØªØ§Ø¨Ø¹Ø© Ø§Ù„ØªØ³ÙˆÙ‚',
+						'متابعة التسوق',
 						'trade-sphare-pro'
 					);
 					?>
@@ -395,7 +321,7 @@ $is_payment_pending = in_array(
 					>
 						<?php
 						esc_html_e(
-							'Ø§Ù„Ø°Ù‡Ø§Ø¨ Ø¥Ù„Ù‰ Ø­Ø³Ø§Ø¨ÙŠ',
+							'الذهاب إلى حسابي',
 							'trade-sphare-pro'
 						);
 						?>
@@ -406,24 +332,12 @@ $is_payment_pending = in_array(
 			</div>
 
 
-			<!-- =================================================
-			     ORDER DETAILS
-			================================================== -->
+			<!-- Order details -->
 
 			<div class="ts-order-details">
 
 				<?php
-				/*
-				 * WooCommerce outputs the order details table
-				 * through this hook.
-				 */
-				do_action(
-					'woocommerce_thankyou_' . $order->get_payment_method(),
-					$order->get_id()
-				);
-
-				do_action(
-					'woocommerce_thankyou',
+				woocommerce_order_details_table(
 					$order->get_id()
 				);
 				?>
@@ -435,3 +349,15 @@ $is_payment_pending = in_array(
 	</div>
 
 </section>
+
+<?php
+
+do_action(
+	'woocommerce_thankyou_' . $order->get_payment_method(),
+	$order->get_id()
+);
+
+do_action(
+	'woocommerce_thankyou',
+	$order->get_id()
+);

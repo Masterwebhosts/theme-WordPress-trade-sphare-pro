@@ -35,23 +35,14 @@ if (
 	! is_wp_error( $product_categories ) &&
 	! empty( $product_categories )
 ) {
-	foreach ( $product_categories as $product_category ) {
+	$category_name = $product_categories[0]->name;
 
-		if ( ! $product_category instanceof WP_Term ) {
-			continue;
-		}
+	$category_term_link = get_term_link(
+		$product_categories[0]
+	);
 
-		$category_name = $product_category->name;
-
-		$category_term_link = get_term_link(
-			$product_category
-		);
-
-		if ( ! is_wp_error( $category_term_link ) ) {
-			$category_url = $category_term_link;
-		}
-
-		break;
+	if ( ! is_wp_error( $category_term_link ) ) {
+		$category_url = $category_term_link;
 	}
 }
 
@@ -68,37 +59,13 @@ $rating_percentage = max(
 		( $average_rating / 5 ) * 100
 	)
 );
-
-/*
- * Sale percentage.
- */
-$sale_percentage = 0;
-
-if ( $product->is_on_sale() ) {
-
-	$regular_price = (float) $product->get_regular_price();
-	$sale_price    = (float) $product->get_sale_price();
-
-	if (
-		$regular_price > 0 &&
-		$sale_price > 0 &&
-		$sale_price < $regular_price
-	) {
-		$sale_percentage = (int) round(
-			(
-				( $regular_price - $sale_price )
-				/ $regular_price
-			) * 100
-		);
-	}
-}
 ?>
 
 <li <?php wc_product_class( 'ts-product-card', $product ); ?>>
 
 	<article class="ts-product-card-inner">
 
-		<!-- Product Media -->
+		<!-- Product Image -->
 
 		<div class="ts-product-card-media">
 
@@ -108,50 +75,18 @@ if ( $product->is_on_sale() ) {
 				aria-label="<?php echo esc_attr( $product->get_name() ); ?>"
 			>
 
-				<div class="ts-product-card-badges">
+				<?php if ( $product->is_on_sale() ) : ?>
 
-					<?php if ( $sale_percentage > 0 ) : ?>
+					<span class="ts-product-card-sale">
+						<?php
+						esc_html_e(
+							'خصم',
+							'trade-sphare-pro'
+						);
+						?>
+					</span>
 
-						<span class="ts-product-card-sale">
-							<?php
-							printf(
-								/* translators: %s: discount percentage. */
-								esc_html__(
-									'Ø®ØµÙ… %s%%',
-									'trade-sphare-pro'
-								),
-								esc_html( $sale_percentage )
-							);
-							?>
-						</span>
-
-					<?php elseif ( $product->is_on_sale() ) : ?>
-
-						<span class="ts-product-card-sale">
-							<?php
-							esc_html_e(
-								'Ø®ØµÙ…',
-								'trade-sphare-pro'
-							);
-							?>
-						</span>
-
-					<?php endif; ?>
-
-					<?php if ( $product->is_featured() ) : ?>
-
-						<span class="ts-product-card-featured">
-							<?php
-							esc_html_e(
-								'Ù…Ù…ÙŠØ²',
-								'trade-sphare-pro'
-							);
-							?>
-						</span>
-
-					<?php endif; ?>
-
-				</div>
+				<?php endif; ?>
 
 				<div class="ts-product-card-image-wrap">
 
@@ -161,7 +96,6 @@ if ( $product->is_on_sale() ) {
 							'woocommerce_thumbnail',
 							array(
 								'loading' => 'lazy',
-								'alt'     => $product->get_name(),
 							)
 						)
 					);
@@ -210,13 +144,15 @@ if ( $product->is_on_sale() ) {
 					aria-hidden="true"
 				>
 
-					<span class="ts-stars-empty">â˜…â˜…â˜…â˜…â˜…</span>
+					<span class="ts-stars-empty">
+						★★★★★
+					</span>
 
 					<span
 						class="ts-stars-filled"
 						style="width: <?php echo esc_attr( $rating_percentage ); ?>%;"
 					>
-						â˜…â˜…â˜…â˜…â˜…
+						★★★★★
 					</span>
 
 				</span>
@@ -226,7 +162,7 @@ if ( $product->is_on_sale() ) {
 					printf(
 						/* translators: 1: rating, 2: review count. */
 						esc_html__(
-							'ØªÙ‚ÙŠÙŠÙ… %1$s Ù…Ù† 5ØŒ %2$s Ù…Ø±Ø§Ø¬Ø¹Ø©',
+							'تقييم %1$s من 5، %2$s مراجعة',
 							'trade-sphare-pro'
 						),
 						esc_html(
@@ -255,7 +191,7 @@ if ( $product->is_on_sale() ) {
 					<span class="ts-product-card-no-rating">
 						<?php
 						esc_html_e(
-							'Ù„Ø§ ØªÙˆØ¬Ø¯ ØªÙ‚ÙŠÙŠÙ…Ø§Øª',
+							'لا توجد تقييمات',
 							'trade-sphare-pro'
 						);
 						?>
@@ -269,11 +205,13 @@ if ( $product->is_on_sale() ) {
 			<!-- Product Price -->
 
 			<div class="ts-product-card-price">
+
 				<?php
 				echo wp_kses_post(
 					$product->get_price_html()
 				);
 				?>
+
 			</div>
 
 

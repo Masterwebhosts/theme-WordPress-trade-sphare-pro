@@ -9,11 +9,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Enqueue theme assets.
+ *
+ * @return void
+ */
 function trade_sphare_pro_enqueue_assets() {
-
-	/* =========================================================
-	 * MAIN STYLE
-	 * ========================================================= */
 
 	$style_css = TRADE_SPHARE_PRO_PATH . '/style.css';
 
@@ -21,6 +22,9 @@ function trade_sphare_pro_enqueue_assets() {
 		? filemtime( $style_css )
 		: TRADE_SPHARE_PRO_VERSION;
 
+	/*
+	 * Main stylesheet.
+	 */
 	wp_enqueue_style(
 		'trade-sphare-pro-style',
 		TRADE_SPHARE_PRO_URI . '/style.css',
@@ -28,29 +32,23 @@ function trade_sphare_pro_enqueue_assets() {
 		$theme_version
 	);
 
-
-	/* =========================================================
-	 * HEADER
-	 * ========================================================= */
-
+	/*
+	 * Header stylesheet.
+	 */
 	$header_css = TRADE_SPHARE_PRO_PATH . '/assets/css/header.css';
 
 	if ( file_exists( $header_css ) ) {
 		wp_enqueue_style(
 			'trade-sphare-pro-header',
 			TRADE_SPHARE_PRO_URI . '/assets/css/header.css',
-			array(
-				'trade-sphare-pro-style',
-			),
+			array( 'trade-sphare-pro-style' ),
 			filemtime( $header_css )
 		);
 	}
 
-
-	/* =========================================================
-	 * FOOTER
-	 * ========================================================= */
-
+	/*
+	 * Footer stylesheet.
+	 */
 	$footer_css = TRADE_SPHARE_PRO_PATH . '/assets/css/footer.css';
 
 	if ( file_exists( $footer_css ) ) {
@@ -65,11 +63,159 @@ function trade_sphare_pro_enqueue_assets() {
 		);
 	}
 
+	/*
+ * RTL stylesheet.
+ */
+$rtl_css = TRADE_SPHARE_PRO_PATH . '/assets/css/rtl.css';
 
-	/* =========================================================
-	 * HOME
-	 * ========================================================= */
+if ( is_rtl() && file_exists( $rtl_css ) ) {
 
+	wp_enqueue_style(
+		'trade-sphare-pro-rtl',
+		TRADE_SPHARE_PRO_URI . '/assets/css/rtl.css',
+		array(
+			'trade-sphare-pro-style',
+			'trade-sphare-pro-header',
+			'trade-sphare-pro-footer',
+		),
+		filemtime( $rtl_css )
+	);
+}
+
+	/*
+ * Product stylesheet.
+ *
+ * Load on WooCommerce pages and the store homepage.
+ */
+$product_css = TRADE_SPHARE_PRO_PATH . '/assets/css/product.css';
+
+if ( file_exists( $product_css ) ) {
+
+	$product_css_pages = class_exists( 'WooCommerce' )
+		&& (
+			is_front_page()
+			|| is_shop()
+			|| is_product_category()
+			|| is_product_tag()
+			|| is_product()
+		);
+
+	if ( $product_css_pages ) {
+		wp_enqueue_style(
+			'trade-sphare-pro-product',
+			TRADE_SPHARE_PRO_URI . '/assets/css/product.css',
+			array(
+				'trade-sphare-pro-style',
+				'trade-sphare-pro-header',
+				'trade-sphare-pro-footer',
+			),
+			filemtime( $product_css )
+		);
+	}
+}
+
+/*
+ * Shop stylesheet.
+ *
+ * Load on the WooCommerce shop and product archives.
+ */
+$shop_css = TRADE_SPHARE_PRO_PATH . '/assets/css/shop.css';
+
+if ( file_exists( $shop_css ) ) {
+
+	$shop_pages = class_exists( 'WooCommerce' )
+		&& (
+			is_shop()
+			|| is_product_category()
+			|| is_product_tag()
+			|| is_product_taxonomy()
+		);
+
+	if ( $shop_pages ) {
+		wp_enqueue_style(
+			'trade-sphare-pro-shop',
+			TRADE_SPHARE_PRO_URI . '/assets/css/shop.css',
+			array(
+				'trade-sphare-pro-style',
+				'trade-sphare-pro-header',
+				'trade-sphare-pro-footer',
+				'trade-sphare-pro-product',
+			),
+			filemtime( $shop_css )
+		);
+	}
+}
+
+/*
+ * Single product stylesheet.
+ */
+$single_product_css = TRADE_SPHARE_PRO_PATH . '/assets/css/single-product.css';
+
+if ( file_exists( $single_product_css ) && class_exists( 'WooCommerce' ) ) {
+
+	if ( is_product() ) {
+
+		wp_enqueue_style(
+			'trade-sphare-pro-single-product',
+			TRADE_SPHARE_PRO_URI . '/assets/css/single-product.css',
+			array(
+				'trade-sphare-pro-style',
+				'trade-sphare-pro-header',
+				'trade-sphare-pro-footer',
+				'trade-sphare-pro-product',
+			),
+			filemtime( $single_product_css )
+		);
+	}
+}
+	/*
+	 * Main JavaScript.
+	 */
+	$main_js = TRADE_SPHARE_PRO_PATH . '/assets/js/main.js';
+
+	if ( file_exists( $main_js ) ) {
+		wp_enqueue_script(
+			'trade-sphare-pro-main',
+			TRADE_SPHARE_PRO_URI . '/assets/js/main.js',
+			array(),
+			filemtime( $main_js ),
+			true
+		);
+	}
+
+	/*
+	 * Header JavaScript.
+	 */
+	$header_js = TRADE_SPHARE_PRO_PATH . '/assets/js/header.js';
+
+	if ( file_exists( $header_js ) ) {
+		wp_enqueue_script(
+			'trade-sphare-pro-header',
+			TRADE_SPHARE_PRO_URI . '/assets/js/header.js',
+			array(),
+			filemtime( $header_js ),
+			true
+		);
+	}
+
+	/*
+	 * Mobile navigation JavaScript.
+	 */
+	$navigation_js = TRADE_SPHARE_PRO_PATH . '/assets/js/navigation.js';
+
+	if ( file_exists( $navigation_js ) ) {
+		wp_enqueue_script(
+			'trade-sphare-pro-navigation',
+			TRADE_SPHARE_PRO_URI . '/assets/js/navigation.js',
+			array(),
+			filemtime( $navigation_js ),
+			true
+		);
+	}
+
+	/*
+	 * Homepage stylesheet.
+	 */
 	if ( is_front_page() || is_home() ) {
 
 		$home_css = TRADE_SPHARE_PRO_PATH . '/assets/css/home.css';
@@ -87,142 +233,21 @@ function trade_sphare_pro_enqueue_assets() {
 			);
 		}
 	}
+}
 
+add_action(
+	'wp_enqueue_scripts',
+	'trade_sphare_pro_enqueue_assets'
+);
 
-	/* =========================================================
-	 * WOOCOMMERCE
-	 * ========================================================= */
+/*
+ * My Account stylesheet.
+ */
+$my_account_css = TRADE_SPHARE_PRO_PATH . '/assets/css/my-account.css';
 
-	if ( class_exists( 'WooCommerce' ) ) {
+if ( file_exists( $my_account_css ) && class_exists( 'WooCommerce' ) ) {
 
-		/* Product */
-
-		$product_css = TRADE_SPHARE_PRO_PATH . '/assets/css/product.css';
-
-
-$product_pages =
-	is_front_page()
-	|| is_shop()
-	|| is_product_category()
-	|| is_product_tag()
-	|| is_product_taxonomy()
-	|| is_product()
-	|| is_cart();
-
-		if ( file_exists( $product_css ) && $product_pages ) {
-
-			wp_enqueue_style(
-				'trade-sphare-pro-product',
-				TRADE_SPHARE_PRO_URI . '/assets/css/product.css',
-				array(
-					'trade-sphare-pro-style',
-					'trade-sphare-pro-header',
-					'trade-sphare-pro-footer',
-				),
-				filemtime( $product_css )
-			);
-		}
-
-
-		/* Shop */
-
-		$shop_css = TRADE_SPHARE_PRO_PATH . '/assets/css/shop.css';
-
-		$shop_pages =
-			is_shop()
-			|| is_product_category()
-			|| is_product_tag()
-			|| is_product_taxonomy();
-
-		if ( file_exists( $shop_css ) && $shop_pages ) {
-
-			wp_enqueue_style(
-				'trade-sphare-pro-shop',
-				TRADE_SPHARE_PRO_URI . '/assets/css/shop.css',
-				array(
-					'trade-sphare-pro-style',
-					'trade-sphare-pro-header',
-					'trade-sphare-pro-footer',
-					'trade-sphare-pro-product',
-				),
-				filemtime( $shop_css )
-			);
-		}
-
-
-		/* Single Product */
-
-		$single_product_css = TRADE_SPHARE_PRO_PATH . '/assets/css/single-product.css';
-
-		if ( file_exists( $single_product_css ) && is_product() ) {
-
-			wp_enqueue_style(
-				'trade-sphare-pro-single-product',
-				TRADE_SPHARE_PRO_URI . '/assets/css/single-product.css',
-				array(
-					'trade-sphare-pro-style',
-					'trade-sphare-pro-header',
-					'trade-sphare-pro-footer',
-					'trade-sphare-pro-product',
-				),
-				filemtime( $single_product_css )
-			);
-		}
-
-
-		/* Cart */
-
-		$cart_css = TRADE_SPHARE_PRO_PATH . '/assets/css/cart.css';
-
-		if ( file_exists( $cart_css ) && is_cart() ) {
-
-			wp_enqueue_style(
-				'trade-sphare-pro-cart',
-				TRADE_SPHARE_PRO_URI . '/assets/css/cart.css',
-				array(
-					'trade-sphare-pro-style',
-					'trade-sphare-pro-header',
-					'trade-sphare-pro-footer',
-					'trade-sphare-pro-product',
-				),
-				filemtime( $cart_css )
-			);
-		}
-
-
-		/* Checkout */
-
-		$checkout_css = TRADE_SPHARE_PRO_PATH . '/assets/css/checkout.css';
-
-		if ( file_exists( $checkout_css ) && is_checkout() ) {
-
-			wp_enqueue_style(
-				'trade-sphare-pro-checkout',
-				TRADE_SPHARE_PRO_URI . '/assets/css/checkout.css',
-				array(
-					'trade-sphare-pro-style',
-					'trade-sphare-pro-header',
-					'trade-sphare-pro-footer',
-				),
-				filemtime( $checkout_css )
-			);
-		}
-	}
-
-
-	/* =========================================================
-	 * MY ACCOUNT
-	 * ========================================================= */
-
-	$my_account_css = TRADE_SPHARE_PRO_PATH . '/assets/css/my-account.css';
-
-	if (
-		function_exists( 'is_account_page' )
-		&&
-		is_account_page()
-		&&
-		file_exists( $my_account_css )
-	) {
+	if ( is_account_page() ) {
 
 		wp_enqueue_style(
 			'trade-sphare-pro-my-account',
@@ -235,80 +260,4 @@ $product_pages =
 			filemtime( $my_account_css )
 		);
 	}
-
-
-	/* =========================================================
-	 * RTL
-	 * ========================================================= */
-
-	$rtl_css = TRADE_SPHARE_PRO_PATH . '/assets/css/rtl.css';
-
-	if (
-		is_rtl()
-		&&
-		file_exists( $rtl_css )
-	) {
-
-		wp_enqueue_style(
-			'trade-sphare-pro-rtl',
-			TRADE_SPHARE_PRO_URI . '/assets/css/rtl.css',
-			array(
-				'trade-sphare-pro-style',
-				'trade-sphare-pro-header',
-				'trade-sphare-pro-footer',
-			),
-			filemtime( $rtl_css )
-		);
-	}
-
-
-	/* =========================================================
-	 * JAVASCRIPT
-	 * ========================================================= */
-
-	$main_js = TRADE_SPHARE_PRO_PATH . '/assets/js/main.js';
-
-	if ( file_exists( $main_js ) ) {
-
-		wp_enqueue_script(
-			'trade-sphare-pro-main',
-			TRADE_SPHARE_PRO_URI . '/assets/js/main.js',
-			array(),
-			filemtime( $main_js ),
-			true
-		);
-	}
-
-
-	$header_js = TRADE_SPHARE_PRO_PATH . '/assets/js/header.js';
-
-	if ( file_exists( $header_js ) ) {
-
-		wp_enqueue_script(
-			'trade-sphare-pro-header',
-			TRADE_SPHARE_PRO_URI . '/assets/js/header.js',
-			array(),
-			filemtime( $header_js ),
-			true
-		);
-	}
-
-
-	$navigation_js = TRADE_SPHARE_PRO_PATH . '/assets/js/navigation.js';
-
-	if ( file_exists( $navigation_js ) ) {
-
-		wp_enqueue_script(
-			'trade-sphare-pro-navigation',
-			TRADE_SPHARE_PRO_URI . '/assets/js/navigation.js',
-			array(),
-			filemtime( $navigation_js ),
-			true
-		);
-	}
 }
-
-add_action(
-	'wp_enqueue_scripts',
-	'trade_sphare_pro_enqueue_assets'
-);

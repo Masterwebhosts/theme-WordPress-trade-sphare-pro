@@ -27,7 +27,7 @@ get_header();
 					<span class="ts-store-eyebrow">
 						<?php
 						esc_html_e(
-							'Ù…Ø±Ø­Ø¨Ù‹Ø§ Ø¨Ùƒ ÙÙŠ Trade Sphare',
+							'مرحبًا بك في Trade Sphare',
 							'trade-sphare-pro'
 						);
 						?>
@@ -36,7 +36,7 @@ get_header();
 					<h1 class="ts-store-hero-title">
 						<?php
 						esc_html_e(
-							'Ø§ÙƒØªØ´Ù Ù…Ù†ØªØ¬Ø§Øª ØªØ³ØªØ­Ù‚ Ù…ÙƒØ§Ù†Ù‹Ø§ ÙÙŠ Ù…ØªØ¬Ø±Ùƒ',
+							'اكتشف منتجات تستحق مكانًا في متجرك',
 							'trade-sphare-pro'
 						);
 						?>
@@ -45,7 +45,7 @@ get_header();
 					<p class="ts-store-hero-description">
 						<?php
 						esc_html_e(
-							'ØªØ¬Ø±Ø¨Ø© ØªØ³ÙˆÙ‚ ÙˆØ§Ø¶Ø­Ø© ÙˆØ³Ø±ÙŠØ¹Ø© Ù…Ø¹ Ù…Ù†ØªØ¬Ø§Øª Ù…Ø®ØªØ§Ø±Ø©ØŒ Ø£Ø³Ø¹Ø§Ø± Ù…Ù†Ø§ÙØ³Ø©ØŒ ÙˆØ¯ÙØ¹ Ø¢Ù…Ù†.',
+							'تجربة تسوق واضحة وسريعة مع منتجات مختارة، أسعار منافسة، ودفع آمن.',
 							'trade-sphare-pro'
 						);
 						?>
@@ -61,7 +61,7 @@ get_header();
 							>
 								<?php
 								esc_html_e(
-									'ØªØµÙØ­ Ø§Ù„Ù…ØªØ¬Ø±',
+									'تصفح المتجر',
 									'trade-sphare-pro'
 								);
 								?>
@@ -75,7 +75,7 @@ get_header();
 						>
 							<?php
 							esc_html_e(
-								'Ø§ÙƒØªØ´Ù Ø§Ù„Ù…Ù†ØªØ¬Ø§Øª',
+								'اكتشف المنتجات',
 								'trade-sphare-pro'
 							);
 							?>
@@ -85,7 +85,6 @@ get_header();
 
 				</div>
 
-
 				<div class="ts-store-hero-card">
 
 					<div class="ts-store-hero-card-inner">
@@ -93,7 +92,7 @@ get_header();
 						<span class="ts-store-hero-card-label">
 							<?php
 							esc_html_e(
-								'ØªØ³ÙˆÙ‚ Ø¨Ø«Ù‚Ø©',
+								'تسوق بثقة',
 								'trade-sphare-pro'
 							);
 							?>
@@ -102,7 +101,7 @@ get_header();
 						<strong>
 							<?php
 							esc_html_e(
-								'Ø¬ÙˆØ¯Ø© â€¢ Ø³Ø±Ø¹Ø© â€¢ Ø£Ù…Ø§Ù†',
+								'جودة • سرعة • أمان',
 								'trade-sphare-pro'
 							);
 							?>
@@ -131,33 +130,27 @@ get_header();
 		<div class="ts-container">
 
 			<div class="ts-visually-hidden">
-
 				<h2 id="ts-benefits-title">
 					<?php
 					esc_html_e(
-						'Ù…Ø²Ø§ÙŠØ§ Ø§Ù„ØªØ³ÙˆÙ‚',
+						'مزايا التسوق',
 						'trade-sphare-pro'
 					);
 					?>
 				</h2>
-
 			</div>
-
 
 			<div class="ts-benefits-grid">
 
 				<article class="ts-benefit-card">
 
-					<span class="ts-benefit-number">
-						01
-					</span>
+					<span class="ts-benefit-number">01</span>
 
 					<div>
-
 						<h3>
 							<?php
 							esc_html_e(
-								'Ø¯ÙØ¹ Ø¢Ù…Ù†',
+								'دفع آمن',
 								'trade-sphare-pro'
 							);
 							?>
@@ -166,29 +159,24 @@ get_header();
 						<p>
 							<?php
 							esc_html_e(
-								'Ø¹Ù…Ù„ÙŠØ© Ø´Ø±Ø§Ø¡ Ø¨Ø³ÙŠØ·Ø© ÙˆØ¢Ù…Ù†Ø© Ù…Ù† Ø§Ù„Ø¨Ø¯Ø§ÙŠØ© Ø­ØªÙ‰ ØªØ£ÙƒÙŠØ¯ Ø§Ù„Ø·Ù„Ø¨.',
+								'عملية شراء بسيطة وآمنة من البداية حتى تأكيد الطلب.',
 								'trade-sphare-pro'
 							);
 							?>
 						</p>
-
 					</div>
 
 				</article>
 
-
 				<article class="ts-benefit-card">
 
-					<span class="ts-benefit-number">
-						02
-					</span>
+					<span class="ts-benefit-number">02</span>
 
 					<div>
-
 						<h3>
 							<?php
 							esc_html_e(
-								'Ø´Ø­Ù† Ø³Ø±ÙŠØ¹',
+								'شحن سريع',
 								'trade-sphare-pro'
 							);
 							?>
@@ -197,29 +185,24 @@ get_header();
 						<p>
 							<?php
 							esc_html_e(
-								'Ù†Ø¬Ù‡Ø² Ø§Ù„Ø·Ù„Ø¨Ø§Øª Ø¨Ø³Ø±Ø¹Ø© Ù…Ø¹ ØªØ¬Ø±Ø¨Ø© ØªÙˆØµÙŠÙ„ ÙˆØ§Ø¶Ø­Ø©.',
+								'نجهز الطلبات بسرعة مع تجربة توصيل واضحة.',
 								'trade-sphare-pro'
 							);
 							?>
 						</p>
-
 					</div>
 
 				</article>
 
-
 				<article class="ts-benefit-card">
 
-					<span class="ts-benefit-number">
-						03
-					</span>
+					<span class="ts-benefit-number">03</span>
 
 					<div>
-
 						<h3>
 							<?php
 							esc_html_e(
-								'Ø§Ø®ØªÙŠØ§Ø±Ø§Øª Ù…ÙˆØ«ÙˆÙ‚Ø©',
+								'اختيارات موثوقة',
 								'trade-sphare-pro'
 							);
 							?>
@@ -228,12 +211,11 @@ get_header();
 						<p>
 							<?php
 							esc_html_e(
-								'Ù…Ù†ØªØ¬Ø§Øª Ù…Ø±ØªØ¨Ø© ÙˆÙˆØ§Ø¶Ø­Ø© Ù„ØªØµÙ„ Ù„Ù…Ø§ ØªØ¨Ø­Ø« Ø¹Ù†Ù‡ Ø¨Ø³Ù‡ÙˆÙ„Ø©.',
+								'منتجات مرتبة وواضحة لتصل لما تبحث عنه بسهولة.',
 								'trade-sphare-pro'
 							);
 							?>
 						</p>
-
 					</div>
 
 				</article>
@@ -246,145 +228,6 @@ get_header();
 
 
 	<?php if ( class_exists( 'WooCommerce' ) ) : ?>
-
-		<?php
-		/*
-		 * -----------------------------------------------------
-		 * Product Categories
-		 * -----------------------------------------------------
-		 */
-
-		$product_categories = get_terms(
-			array(
-				'taxonomy'   => 'product_cat',
-				'hide_empty' => true,
-				'number'     => 6,
-				'orderby'    => 'count',
-				'order'      => 'DESC',
-			)
-		);
-
-		if ( is_wp_error( $product_categories ) ) {
-			$product_categories = array();
-		}
-
-
-		/*
-		 * -----------------------------------------------------
-		 * Featured Products
-		 * -----------------------------------------------------
-		 */
-
-		$featured_products = wc_get_products(
-			array(
-				'status'       => 'publish',
-				'limit'        => 8,
-				'featured'     => true,
-				'stock_status' => 'instock',
-				'return'       => 'objects',
-			)
-		);
-
-
-		/*
-		 * -----------------------------------------------------
-		 * Latest Products
-		 * -----------------------------------------------------
-		 */
-
-		$latest_products = wc_get_products(
-			array(
-				'status'       => 'publish',
-				'limit'        => 8,
-				'orderby'      => 'date',
-				'order'        => 'DESC',
-				'stock_status' => 'instock',
-				'return'       => 'objects',
-			)
-		);
-
-
-		/*
-		 * -----------------------------------------------------
-		 * Best Selling Products
-		 * -----------------------------------------------------
-		 */
-
-		$best_selling_products = wc_get_products(
-			array(
-				'status'       => 'publish',
-				'limit'        => 8,
-				'orderby'      => 'popularity',
-				'order'        => 'DESC',
-				'stock_status' => 'instock',
-				'return'       => 'objects',
-			)
-		);
-
-
-		/*
-		 * -----------------------------------------------------
-		 * Prevent repeated products across sections.
-		 * -----------------------------------------------------
-		 */
-
-		$featured_ids = array();
-
-		foreach ( $featured_products as $featured_product ) {
-
-			if ( $featured_product instanceof WC_Product ) {
-				$featured_ids[] = $featured_product->get_id();
-			}
-		}
-
-
-		$filtered_latest_products = array();
-
-		foreach ( $latest_products as $latest_product ) {
-
-			if ( ! $latest_product instanceof WC_Product ) {
-				continue;
-			}
-
-			if ( in_array( $latest_product->get_id(), $featured_ids, true ) ) {
-				continue;
-			}
-
-			$filtered_latest_products[] = $latest_product;
-
-			if ( count( $filtered_latest_products ) >= 8 ) {
-				break;
-			}
-		}
-
-
-		$used_product_ids = $featured_ids;
-
-		foreach ( $filtered_latest_products as $latest_product ) {
-			$used_product_ids[] = $latest_product->get_id();
-		}
-
-
-		$filtered_best_selling_products = array();
-
-		foreach ( $best_selling_products as $best_selling_product ) {
-
-			if ( ! $best_selling_product instanceof WC_Product ) {
-				continue;
-			}
-
-			if ( in_array( $best_selling_product->get_id(), $used_product_ids, true ) ) {
-				continue;
-			}
-
-			$filtered_best_selling_products[] = $best_selling_product;
-
-			if ( count( $filtered_best_selling_products ) >= 8 ) {
-				break;
-			}
-		}
-		?>
-
 
 		<!-- =================================================
 		     PRODUCT CATEGORIES
@@ -400,11 +243,10 @@ get_header();
 				<div class="ts-section-heading">
 
 					<div>
-
 						<span class="ts-store-eyebrow">
 							<?php
 							esc_html_e(
-								'Ø§Ø³ØªÙƒØ´Ù Ø§Ù„Ø£Ù‚Ø³Ø§Ù…',
+								'استكشف الأقسام',
 								'trade-sphare-pro'
 							);
 							?>
@@ -413,14 +255,12 @@ get_header();
 						<h2 id="ts-categories-title">
 							<?php
 							esc_html_e(
-								'ØªØ³ÙˆÙ‚ Ø­Ø³Ø¨ Ø§Ù„ÙØ¦Ø©',
+								'تسوق حسب الفئة',
 								'trade-sphare-pro'
 							);
 							?>
 						</h2>
-
 					</div>
-
 
 					<a
 						class="ts-text-link"
@@ -428,7 +268,7 @@ get_header();
 					>
 						<?php
 						esc_html_e(
-							'Ø¹Ø±Ø¶ ÙƒÙ„ Ø§Ù„Ù…Ù†ØªØ¬Ø§Øª',
+							'عرض كل المنتجات',
 							'trade-sphare-pro'
 						);
 						?>
@@ -436,21 +276,25 @@ get_header();
 
 				</div>
 
-
 				<div class="ts-category-grid">
 
-					<?php if ( ! empty( $product_categories ) ) : ?>
+					<?php
+					$product_categories = get_terms(
+						array(
+							'taxonomy'   => 'product_cat',
+							'hide_empty' => true,
+							'number'     => 6,
+						)
+					);
+					?>
+
+					<?php if ( ! is_wp_error( $product_categories ) && ! empty( $product_categories ) ) : ?>
 
 						<?php foreach ( $product_categories as $category ) : ?>
 
 							<?php
 							$category_link = get_term_link( $category );
-
-							if ( is_wp_error( $category_link ) ) {
-								continue;
-							}
-
-							$thumbnail_id = (int) get_term_meta(
+							$thumbnail_id  = get_term_meta(
 								$category->term_id,
 								'thumbnail_id',
 								true
@@ -460,7 +304,6 @@ get_header();
 							<a
 								class="ts-category-card"
 								href="<?php echo esc_url( $category_link ); ?>"
-								aria-label="<?php echo esc_attr( $category->name ); ?>"
 							>
 
 								<div class="ts-category-image">
@@ -473,9 +316,7 @@ get_header();
 											'medium',
 											false,
 											array(
-												'loading'  => 'lazy',
-												'decoding' => 'async',
-												'alt'      => $category->name,
+												'loading' => 'lazy',
 											)
 										);
 										?>
@@ -485,7 +326,7 @@ get_header();
 										<span class="ts-category-placeholder">
 											<?php
 											esc_html_e(
-												'ØªØµÙ†ÙŠÙ',
+												'تصنيف',
 												'trade-sphare-pro'
 											);
 											?>
@@ -494,7 +335,6 @@ get_header();
 									<?php endif; ?>
 
 								</div>
-
 
 								<div class="ts-category-content">
 
@@ -505,17 +345,18 @@ get_header();
 									<span>
 										<?php
 										printf(
+											/* translators: %s: product count. */
 											esc_html(
 												_n(
-													'%s Ù…Ù†ØªØ¬',
-													'%s Ù…Ù†ØªØ¬Ø§Øª',
-													(int) $category->count,
+													'%s منتج',
+													'%s منتجات',
+													$category->count,
 													'trade-sphare-pro'
 												)
 											),
 											esc_html(
 												number_format_i18n(
-													(int) $category->count
+													$category->count
 												)
 											)
 										);
@@ -531,16 +372,12 @@ get_header();
 					<?php else : ?>
 
 						<div class="ts-store-empty">
-
-							<p>
-								<?php
-								esc_html_e(
-									'Ù„Ù… ØªØªÙ… Ø¥Ø¶Ø§ÙØ© ØªØµÙ†ÙŠÙØ§Øª Ù„Ù„Ù…Ù†ØªØ¬Ø§Øª Ø¨Ø¹Ø¯.',
-									'trade-sphare-pro'
-								);
-								?>
-							</p>
-
+							<?php
+							esc_html_e(
+								'لم تتم إضافة تصنيفات للمنتجات بعد.',
+								'trade-sphare-pro'
+							);
+							?>
 						</div>
 
 					<?php endif; ?>
@@ -571,7 +408,7 @@ get_header();
 						<span class="ts-store-eyebrow">
 							<?php
 							esc_html_e(
-								'Ù…Ø®ØªØ§Ø±Ø§ØªÙ†Ø§',
+								'مختاراتنا',
 								'trade-sphare-pro'
 							);
 							?>
@@ -580,7 +417,7 @@ get_header();
 						<h2 id="ts-featured-products-title">
 							<?php
 							esc_html_e(
-								'Ù…Ù†ØªØ¬Ø§Øª Ù…Ù…ÙŠØ²Ø©',
+								'منتجات مميزة',
 								'trade-sphare-pro'
 							);
 							?>
@@ -588,14 +425,13 @@ get_header();
 
 					</div>
 
-
 					<a
 						class="ts-text-link"
 						href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>"
 					>
 						<?php
 						esc_html_e(
-							'Ø§Ù„Ù…Ø²ÙŠØ¯ Ù…Ù† Ø§Ù„Ù…Ù†ØªØ¬Ø§Øª',
+							'المزيد من المنتجات',
 							'trade-sphare-pro'
 						);
 						?>
@@ -603,23 +439,37 @@ get_header();
 
 				</div>
 
-
 				<div class="ts-product-grid">
 
-					<?php if ( ! empty( $featured_products ) ) : ?>
+					<?php
+					$featured_products = new WP_Query(
+						array(
+							'post_type'      => 'product',
+							'post_status'    => 'publish',
+							'posts_per_page' => 8,
+							'no_found_rows'  => true,
+							'tax_query'      => array(
+								array(
+									'taxonomy' => 'product_visibility',
+									'field'    => 'name',
+									'terms'    => array( 'featured' ),
+								),
+							),
+						)
+					);
+					?>
 
-						<?php foreach ( $featured_products as $featured_product ) : ?>
+					<?php if ( $featured_products->have_posts() ) : ?>
 
-							<?php
-							$GLOBALS['product'] = $featured_product;
+						<?php while ( $featured_products->have_posts() ) : ?>
 
-							wc_get_template_part(
-								'content',
-								'product'
-							);
-							?>
+							<?php $featured_products->the_post(); ?>
 
-						<?php endforeach; ?>
+							<?php wc_get_template_part( 'content', 'product' ); ?>
+
+						<?php endwhile; ?>
+
+						<?php wp_reset_postdata(); ?>
 
 					<?php else : ?>
 
@@ -628,7 +478,7 @@ get_header();
 							<p>
 								<?php
 								esc_html_e(
-									'Ù„Ù… ØªØªÙ… Ø¥Ø¶Ø§ÙØ© Ù…Ù†ØªØ¬Ø§Øª Ù…Ù…ÙŠØ²Ø© Ø¨Ø¹Ø¯.',
+									'لم تتم إضافة منتجات مميزة بعد.',
 									'trade-sphare-pro'
 								);
 								?>
@@ -640,7 +490,7 @@ get_header();
 							>
 								<?php
 								esc_html_e(
-									'Ø²ÙŠØ§Ø±Ø© Ø§Ù„Ù…ØªØ¬Ø±',
+									'زيارة المتجر',
 									'trade-sphare-pro'
 								);
 								?>
@@ -658,161 +508,7 @@ get_header();
 
 
 		<!-- =================================================
-		     LATEST PRODUCTS
-		================================================== -->
-
-		<?php if ( ! empty( $filtered_latest_products ) ) : ?>
-
-			<section
-				class="ts-store-products"
-				aria-labelledby="ts-latest-products-title"
-			>
-
-				<div class="ts-container">
-
-					<div class="ts-section-heading">
-
-						<div>
-
-							<span class="ts-store-eyebrow">
-								<?php
-								esc_html_e(
-									'ÙˆØµÙ„ Ø­Ø¯ÙŠØ«Ù‹Ø§',
-									'trade-sphare-pro'
-								);
-								?>
-							</span>
-
-							<h2 id="ts-latest-products-title">
-								<?php
-								esc_html_e(
-									'Ø£Ø­Ø¯Ø« Ø§Ù„Ù…Ù†ØªØ¬Ø§Øª',
-									'trade-sphare-pro'
-								);
-								?>
-							</h2>
-
-						</div>
-
-
-						<a
-							class="ts-text-link"
-							href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>"
-						>
-							<?php
-							esc_html_e(
-								'Ù…Ø´Ø§Ù‡Ø¯Ø© Ø§Ù„ÙƒÙ„',
-								'trade-sphare-pro'
-							);
-							?>
-						</a>
-
-					</div>
-
-
-					<div class="ts-product-grid">
-
-						<?php foreach ( $filtered_latest_products as $latest_product ) : ?>
-
-							<?php
-							$GLOBALS['product'] = $latest_product;
-
-							wc_get_template_part(
-								'content',
-								'product'
-							);
-							?>
-
-						<?php endforeach; ?>
-
-					</div>
-
-				</div>
-
-			</section>
-
-		<?php endif; ?>
-
-
-		<!-- =================================================
-		     BEST SELLING
-		================================================== -->
-
-		<?php if ( ! empty( $filtered_best_selling_products ) ) : ?>
-
-			<section
-				class="ts-store-products"
-				aria-labelledby="ts-best-selling-title"
-			>
-
-				<div class="ts-container">
-
-					<div class="ts-section-heading">
-
-						<div>
-
-							<span class="ts-store-eyebrow">
-								<?php
-								esc_html_e(
-									'Ø§Ù„Ø£ÙƒØ«Ø± Ø·Ù„Ø¨Ù‹Ø§',
-									'trade-sphare-pro'
-								);
-								?>
-							</span>
-
-							<h2 id="ts-best-selling-title">
-								<?php
-								esc_html_e(
-									'Ø§Ù„Ø£ÙƒØ«Ø± Ù…Ø¨ÙŠØ¹Ù‹Ø§',
-									'trade-sphare-pro'
-								);
-								?>
-							</h2>
-
-						</div>
-
-
-						<a
-							class="ts-text-link"
-							href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>"
-						>
-							<?php
-							esc_html_e(
-								'Ù…Ø´Ø§Ù‡Ø¯Ø© Ø§Ù„ÙƒÙ„',
-								'trade-sphare-pro'
-							);
-							?>
-						</a>
-
-					</div>
-
-
-					<div class="ts-product-grid">
-
-						<?php foreach ( $filtered_best_selling_products as $best_selling_product ) : ?>
-
-							<?php
-							$GLOBALS['product'] = $best_selling_product;
-
-							wc_get_template_part(
-								'content',
-								'product'
-							);
-							?>
-
-						<?php endforeach; ?>
-
-					</div>
-
-				</div>
-
-			</section>
-
-		<?php endif; ?>
-
-
-		<!-- =================================================
-		     STORE TRUST / CTA
+		     CTA
 		================================================== -->
 
 		<section class="ts-store-cta">
@@ -822,11 +518,10 @@ get_header();
 				<div class="ts-store-cta-box">
 
 					<div>
-
 						<span class="ts-store-eyebrow">
 							<?php
 							esc_html_e(
-								'Ø¬Ø§Ù‡Ø² Ù„Ù„Ø¨Ø¯Ø¡ØŸ',
+								'جاهز للبدء؟',
 								'trade-sphare-pro'
 							);
 							?>
@@ -835,7 +530,7 @@ get_header();
 						<h2>
 							<?php
 							esc_html_e(
-								'Ø§Ø¹Ø«Ø± Ø¹Ù„Ù‰ Ù…Ø§ ØªØ­ØªØ§Ø¬Ù‡ Ø¨Ø³Ù‡ÙˆÙ„Ø©.',
+								'اعثر على ما تحتاجه بسهولة.',
 								'trade-sphare-pro'
 							);
 							?>
@@ -844,14 +539,12 @@ get_header();
 						<p>
 							<?php
 							esc_html_e(
-								'Ø§Ø³ØªÙƒØ´Ù Ù…Ø¬Ù…ÙˆØ¹ØªÙ†Ø§ ÙˆØ§ÙƒØªØ´Ù Ø§Ù„Ù…Ù†ØªØ¬Ø§Øª Ø§Ù„ØªÙŠ ØªÙ†Ø§Ø³Ø¨ Ø§Ø­ØªÙŠØ§Ø¬Ø§ØªÙƒ.',
+								'استكشف مجموعتنا واكتشف المنتجات التي تناسب احتياجاتك.',
 								'trade-sphare-pro'
 							);
 							?>
 						</p>
-
 					</div>
-
 
 					<a
 						class="ts-button"
@@ -859,7 +552,7 @@ get_header();
 					>
 						<?php
 						esc_html_e(
-							'ØªØµÙØ­ Ø§Ù„Ù…ØªØ¬Ø±',
+							'تصفح المتجر',
 							'trade-sphare-pro'
 						);
 						?>

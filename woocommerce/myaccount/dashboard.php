@@ -22,38 +22,32 @@ $account_url = wc_get_account_endpoint_url(
 );
 
 $logout_url = wc_logout_url();
-
-$display_name = $current_user->display_name;
-
-if ( ! $display_name ) {
-	$display_name = $current_user->user_login;
-}
 ?>
 
 <section class="ts-account-dashboard">
 
 	<header class="ts-account-welcome">
 
-		<div class="ts-account-welcome-label">
-			<span class="ts-account-eyebrow">
-				<?php
-				esc_html_e(
-					'Ø­Ø³Ø§Ø¨ÙŠ',
-					'trade-sphare-pro'
-				);
-				?>
-			</span>
-		</div>
+		<span class="ts-account-eyebrow">
+			<?php
+			esc_html_e(
+				'حسابي',
+				'trade-sphare-pro'
+			);
+			?>
+		</span>
 
 		<h1>
 			<?php
 			printf(
 				/* translators: %s: customer name. */
 				esc_html__(
-					'Ù…Ø±Ø­Ø¨Ù‹Ø§ØŒ %s',
+					'مرحبًا، %s',
 					'trade-sphare-pro'
 				),
-				esc_html( $display_name )
+				esc_html(
+					$current_user->display_name
+				)
 			);
 			?>
 		</h1>
@@ -61,7 +55,7 @@ if ( ! $display_name ) {
 		<p>
 			<?php
 			esc_html_e(
-				'Ù…Ù† Ù‡Ù†Ø§ ÙŠÙ…ÙƒÙ†Ùƒ Ù…ØªØ§Ø¨Ø¹Ø© Ø·Ù„Ø¨Ø§ØªÙƒ ÙˆØ¥Ø¯Ø§Ø±Ø© Ø¨ÙŠØ§Ù†Ø§Øª Ø­Ø³Ø§Ø¨Ùƒ ÙˆØ¹Ù†Ø§ÙˆÙŠÙ†Ùƒ.',
+				'من هنا يمكنك متابعة طلباتك وإدارة بيانات حسابك وعناوينك.',
 				'trade-sphare-pro'
 			);
 			?>
@@ -81,12 +75,12 @@ if ( ! $display_name ) {
 				01
 			</span>
 
-			<div class="ts-account-card-content">
+			<div>
 
 				<h2>
 					<?php
 					esc_html_e(
-						'Ø·Ù„Ø¨Ø§ØªÙŠ',
+						'طلباتي',
 						'trade-sphare-pro'
 					);
 					?>
@@ -95,20 +89,11 @@ if ( ! $display_name ) {
 				<p>
 					<?php
 					esc_html_e(
-						'Ø¹Ø±Ø¶ Ø¬Ù…ÙŠØ¹ Ø§Ù„Ø·Ù„Ø¨Ø§Øª ÙˆÙ…ØªØ§Ø¨Ø¹Ø© Ø­Ø§Ù„ØªÙ‡Ø§.',
+						'عرض جميع الطلبات ومتابعة حالتها.',
 						'trade-sphare-pro'
 					);
 					?>
 				</p>
-
-				<span class="ts-account-card-link">
-					<?php
-					esc_html_e(
-						'Ø¹Ø±Ø¶ Ø§Ù„Ø·Ù„Ø¨Ø§Øª',
-						'trade-sphare-pro'
-					);
-					?>
-				</span>
 
 			</div>
 
@@ -124,12 +109,12 @@ if ( ! $display_name ) {
 				02
 			</span>
 
-			<div class="ts-account-card-content">
+			<div>
 
 				<h2>
 					<?php
 					esc_html_e(
-						'Ø§Ù„Ø¹Ù†Ø§ÙˆÙŠÙ†',
+						'العناوين',
 						'trade-sphare-pro'
 					);
 					?>
@@ -138,20 +123,11 @@ if ( ! $display_name ) {
 				<p>
 					<?php
 					esc_html_e(
-						'Ø¥Ø¯Ø§Ø±Ø© Ø¹Ù†Ø§ÙˆÙŠÙ† Ø§Ù„ÙÙˆØªØ±Ø© ÙˆØ§Ù„Ø´Ø­Ù†.',
+						'إدارة عناوين الفوترة والشحن.',
 						'trade-sphare-pro'
 					);
 					?>
 				</p>
-
-				<span class="ts-account-card-link">
-					<?php
-					esc_html_e(
-						'Ø¥Ø¯Ø§Ø±Ø© Ø§Ù„Ø¹Ù†Ø§ÙˆÙŠÙ†',
-						'trade-sphare-pro'
-					);
-					?>
-				</span>
 
 			</div>
 
@@ -167,12 +143,12 @@ if ( ! $display_name ) {
 				03
 			</span>
 
-			<div class="ts-account-card-content">
+			<div>
 
 				<h2>
 					<?php
 					esc_html_e(
-						'Ø¨ÙŠØ§Ù†Ø§Øª Ø§Ù„Ø­Ø³Ø§Ø¨',
+						'بيانات الحساب',
 						'trade-sphare-pro'
 					);
 					?>
@@ -181,20 +157,11 @@ if ( ! $display_name ) {
 				<p>
 					<?php
 					esc_html_e(
-						'ØªØ¹Ø¯ÙŠÙ„ Ø§Ù„Ø§Ø³Ù… ÙˆØ§Ù„Ø¨Ø±ÙŠØ¯ ÙˆÙƒÙ„Ù…Ø© Ø§Ù„Ù…Ø±ÙˆØ±.',
+						'تعديل الاسم والبريد وكلمة المرور.',
 						'trade-sphare-pro'
 					);
 					?>
 				</p>
-
-				<span class="ts-account-card-link">
-					<?php
-					esc_html_e(
-						'ØªØ¹Ø¯ÙŠÙ„ Ø§Ù„Ø¨ÙŠØ§Ù†Ø§Øª',
-						'trade-sphare-pro'
-					);
-					?>
-				</span>
 
 			</div>
 
@@ -210,12 +177,12 @@ if ( ! $display_name ) {
 				04
 			</span>
 
-			<div class="ts-account-card-content">
+			<div>
 
 				<h2>
 					<?php
 					esc_html_e(
-						'ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø®Ø±ÙˆØ¬',
+						'تسجيل الخروج',
 						'trade-sphare-pro'
 					);
 					?>
@@ -224,20 +191,11 @@ if ( ! $display_name ) {
 				<p>
 					<?php
 					esc_html_e(
-						'Ø§Ù„Ø®Ø±ÙˆØ¬ Ù…Ù† Ø­Ø³Ø§Ø¨Ùƒ Ø¨Ø£Ù…Ø§Ù†.',
+						'الخروج من حسابك بأمان.',
 						'trade-sphare-pro'
 					);
 					?>
 				</p>
-
-				<span class="ts-account-card-link">
-					<?php
-					esc_html_e(
-						'ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø®Ø±ÙˆØ¬',
-						'trade-sphare-pro'
-					);
-					?>
-				</span>
 
 			</div>
 
@@ -251,7 +209,7 @@ if ( ! $display_name ) {
 		<h2>
 			<?php
 			esc_html_e(
-				'Ø¥Ø¯Ø§Ø±Ø© Ø§Ù„Ø­Ø³Ø§Ø¨',
+				'إدارة الحساب',
 				'trade-sphare-pro'
 			);
 			?>
@@ -260,7 +218,7 @@ if ( ! $display_name ) {
 		<p>
 			<?php
 			esc_html_e(
-				'Ø§Ø³ØªØ®Ø¯Ù… Ø§Ù„Ù‚Ø§Ø¦Ù…Ø© Ø§Ù„Ø¬Ø§Ù†Ø¨ÙŠØ© Ù„Ù„ÙˆØµÙˆÙ„ Ø¥Ù„Ù‰ Ø¬Ù…ÙŠØ¹ Ø£Ù‚Ø³Ø§Ù… Ø­Ø³Ø§Ø¨Ùƒ.',
+				'استخدم القائمة الجانبية للوصول إلى جميع أقسام حسابك.',
 				'trade-sphare-pro'
 			);
 			?>
