@@ -2,135 +2,126 @@
    TRADE SPHARE PRO - MY ACCOUNT
 ========================================================= */
 
-.ts-my-account {
-	padding: 55px 0 90px;
 
-	background: var(--ts-surface-soft);
+/* =========================================================
+   ACCOUNT PAGE
+========================================================= */
+
+.ts-account {
+	width: 100%;
 }
 
-.ts-my-account-layout {
-	display: grid;
+.ts-account-inner {
+	width: min(1180px, calc(100% - 40px));
 
-	grid-template-columns:
-		270px minmax(0, 1fr);
-
-	gap: 28px;
-
-	align-items: start;
+	margin: 0 auto;
 }
 
 
 /* =========================================================
-   NAVIGATION
+   ACCOUNT NAVIGATION
 ========================================================= */
+
+.ts-account-layout {
+	display: grid;
+
+	grid-template-columns: 250px minmax(0, 1fr);
+
+	gap: 32px;
+
+	align-items: start;
+}
 
 .ts-account-navigation {
 	position: sticky;
-	top: 24px;
+
+	top: 30px;
+
+	padding: 18px;
 
 	background: #ffffff;
 
-	border: 1px solid var(--ts-border-light);
-	border-radius: var(--ts-radius-lg);
+	border: 1px solid rgba(0, 0, 0, .08);
+	border-radius: 18px;
 
-	box-shadow: var(--ts-shadow-sm);
-
-	overflow: hidden;
-}
-
-.ts-account-nav-header {
-	display: flex;
-	align-items: center;
-
-	gap: 12px;
-
-	padding: 20px;
-
-	background:
-		linear-gradient(135deg,
-			var(--ts-navy-950),
-			var(--ts-navy-900));
-
-	color: #ffffff;
-}
-
-
-.ts-account-nav-header strong {
-	display: block;
-
-	color: #ffffff;
-
-	font-size: 14px;
-	font-weight: 800;
-}
-
-.ts-account-nav-header span {
-	display: block;
-
-	margin-top: 3px;
-
-	color: #94a3b8;
-
-	font-size: 11px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, .04);
 }
 
 .ts-account-navigation ul {
+	display: flex;
+
+	flex-direction: column;
+
+	gap: 6px;
+
 	margin: 0;
-	padding: 10px;
+	padding: 0;
 
 	list-style: none;
 }
 
 .ts-account-navigation li {
 	margin: 0;
+	padding: 0;
 }
 
-.ts-account-navigation li a {
+.ts-account-navigation a {
 	display: flex;
+
 	align-items: center;
 
-	min-height: 44px;
+	min-height: 46px;
 
-	padding: 9px 12px;
+	padding: 0 14px;
 
-	color: var(--ts-text-600);
+	color: var(--ts-text, #111827);
 
-	border-radius: 9px;
+	border-radius: 11px;
 
-	font-size: 13px;
+	font-size: 14px;
 	font-weight: 700;
+
+	line-height: 1.5;
 
 	text-decoration: none;
 
 	transition:
 		color .2s ease,
-		background-color .2s ease;
+		background .2s ease,
+		transform .2s ease;
 }
 
-.ts-account-navigation li a:hover,
-.ts-account-navigation li.is-active a,
-.ts-account-navigation li.is-active a[aria-current="page"] {
-	color: var(--ts-primary);
+.ts-account-navigation a:hover,
+.ts-account-navigation a:focus-visible {
+	color: var(--ts-primary, #2563eb);
 
-	background: var(--ts-surface-blue);
+	background: rgba(37, 99, 235, .06);
+
+	text-decoration: none;
+}
+
+.ts-account-navigation .is-active a,
+.ts-account-navigation .is-active>a {
+	color: var(--ts-primary, #2563eb);
+
+	background: rgba(37, 99, 235, .08);
 }
 
 
 /* =========================================================
-   CONTENT
+   ACCOUNT CONTENT PANEL
 ========================================================= */
 
-.ts-my-account-content {
+.ts-account-content {
 	min-width: 0;
+}
 
-	padding: 30px;
+.ts-account-content>*:first-child {
+	margin-top: 0;
+}
 
-	background: #ffffff;
-
-	border: 1px solid var(--ts-border-light);
-	border-radius: var(--ts-radius-lg);
-
-	box-shadow: var(--ts-shadow-sm);
+.ts-account-content>*:last-child {
+	margin-bottom: 0;
 }
 
 
@@ -138,500 +129,292 @@
    DASHBOARD
 ========================================================= */
 
-.ts-account-welcome {
-	padding-bottom: 28px;
-
-	border-bottom: 1px solid var(--ts-border-light);
+.ts-account-dashboard {
+	width: 100%;
 }
 
-.ts-account-eyebrow {
-	display: inline-flex;
-	align-items: center;
-
-	margin-bottom: 10px;
-
-	color: var(--ts-primary);
-
-	font-size: 12px;
-	font-weight: 800;
+.ts-account-dashboard-header {
+	margin-bottom: 28px;
 }
 
-.ts-account-eyebrow::before {
-	content: "";
+.ts-account-dashboard-title {
+	margin: 0 0 8px;
 
-	width: 22px;
-	height: 3px;
+	color: var(--ts-text, #111827);
 
-	margin-inline-end: 8px;
+	font-size: clamp(28px, 3vw, 38px);
+	font-weight: 900;
 
-	background: var(--ts-primary);
-
-	border-radius: 999px;
+	line-height: 1.2;
 }
 
-.ts-account-welcome h1 {
+.ts-account-dashboard-description {
 	margin: 0;
 
-	color: var(--ts-navy-950);
-
-	font-size: clamp(28px, 4vw, 40px);
-	font-weight: 850;
-
-	line-height: 1.25;
-}
-
-.ts-account-welcome p {
-	max-width: 680px;
-
-	margin: 10px 0 0;
-
-	color: var(--ts-text-500);
+	color: var(--ts-text-500, #6b7280);
 
 	font-size: 14px;
+
 	line-height: 1.8;
 }
 
 
-/* Cards */
+/* =========================================================
+   DASHBOARD CARDS
+========================================================= */
 
-.ts-account-cards {
+.ts-account-dashboard-cards {
 	display: grid;
 
-	grid-template-columns:
-		repeat(2, minmax(0, 1fr));
+	grid-template-columns: repeat(3, minmax(0, 1fr));
 
-	gap: 16px;
+	gap: 18px;
 
-	margin-top: 26px;
+	margin-bottom: 28px;
 }
 
-.ts-account-card {
+.ts-account-dashboard-card {
 	display: flex;
-	align-items: flex-start;
 
-	gap: 16px;
+	flex-direction: column;
 
-	min-width: 0;
+	min-height: 150px;
 
 	padding: 22px;
 
 	background: #ffffff;
 
-	border: 1px solid var(--ts-border-light);
-	border-radius: 14px;
+	border: 1px solid rgba(0, 0, 0, .08);
+	border-radius: 18px;
 
-	text-decoration: none;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, .04);
 
 	transition:
 		transform .2s ease,
-		border-color .2s ease,
-		box-shadow .2s ease;
+		box-shadow .2s ease,
+		border-color .2s ease;
 }
 
-.ts-account-card:hover,
-.ts-account-card:focus-visible {
-	transform: translateY(-3px);
+.ts-account-dashboard-card:hover {
+	transform: translateY(-2px);
 
-	border-color: rgba(37, 99, 235, .20);
+	border-color: rgba(37, 99, 235, .15);
 
-	box-shadow: var(--ts-shadow-md);
+	box-shadow: 0 16px 36px rgba(0, 0, 0, .07);
 }
 
-.ts-account-card-number {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
+.ts-account-dashboard-card-label {
+	margin-bottom: 8px;
 
-	flex: 0 0 40px;
+	color: var(--ts-text-500, #6b7280);
 
-	width: 40px;
-	height: 40px;
+	font-size: 12px;
+	font-weight: 700;
 
-	color: var(--ts-primary);
-
-	background: var(--ts-surface-blue);
-
-	border-radius: 10px;
-
-	font-size: 11px;
-	font-weight: 800;
-}
-
-.ts-account-card h2 {
-	margin: 0;
-
-	color: var(--ts-text-950);
-
-	font-size: 16px;
-	font-weight: 800;
 	line-height: 1.5;
 }
 
-.ts-account-card p {
-	margin: 5px 0 0;
-
-	color: var(--ts-text-500);
-
-	font-size: 12px;
-	line-height: 1.7;
-}
-
-.ts-account-card-logout .ts-account-card-number {
-	color: var(--ts-danger);
-
-	background: #fef2f2;
-}
-
-
-/* Summary */
-
-.ts-account-summary {
-	margin-top: 28px;
-	padding-top: 25px;
-
-	border-top: 1px solid var(--ts-border-light);
-}
-
-.ts-account-summary h2 {
-	margin: 0 0 7px;
-
-	color: var(--ts-text-950);
-
-	font-size: 20px;
-	font-weight: 800;
-}
-
-.ts-account-summary p {
+.ts-account-dashboard-card-value {
 	margin: 0;
 
-	color: var(--ts-text-500);
+	color: var(--ts-text, #111827);
+
+	font-size: 28px;
+	font-weight: 900;
+
+	line-height: 1.2;
+}
+
+
+/* =========================================================
+   DASHBOARD SUMMARY
+========================================================= */
+
+.ts-account-summary {
+	display: grid;
+
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+
+	gap: 18px;
+
+	margin-top: 24px;
+}
+
+.ts-account-summary-card {
+	padding: 24px;
+
+	background: #ffffff;
+
+	border: 1px solid rgba(0, 0, 0, .08);
+	border-radius: 18px;
+}
+
+.ts-account-summary-card h2,
+.ts-account-summary-card h3 {
+	margin: 0 0 10px;
+
+	color: var(--ts-text, #111827);
+
+	font-size: 18px;
+	font-weight: 800;
+
+	line-height: 1.4;
+}
+
+.ts-account-summary-card p {
+	margin: 0;
+
+	color: var(--ts-text-500, #6b7280);
 
 	font-size: 13px;
+
 	line-height: 1.8;
 }
 
 
 /* =========================================================
-   ORDERS / ADDRESS / ACCOUNT DEFAULT WOOCOMMERCE
+   GENERAL ACCOUNT CONTENT
 ========================================================= */
 
-.ts-my-account-content .woocommerce-orders-table {
+.ts-account-content h2,
+.ts-account-content h3 {
+	color: var(--ts-text, #111827);
+
+	font-weight: 800;
+}
+
+.ts-account-content p {
+	color: var(--ts-text-500, #6b7280);
+
+	line-height: 1.8;
+}
+
+.ts-account-content table {
 	width: 100%;
 
 	border-collapse: collapse;
 }
 
-.ts-my-account-content .woocommerce-orders-table th,
-.ts-my-account-content .woocommerce-orders-table td {
-	padding: 13px 10px;
+.ts-account-content th,
+.ts-account-content td {
+	padding: 14px 12px;
 
-	border-bottom: 1px solid var(--ts-border-light);
-
-	font-size: 12px;
+	border-bottom: 1px solid rgba(0, 0, 0, .07);
 
 	text-align: right;
+
+	vertical-align: middle;
 }
 
-.ts-my-account-content .woocommerce-orders-table th {
-	color: var(--ts-text-500);
-
-	font-weight: 800;
-}
-
-.ts-my-account-content .woocommerce-orders-table td {
-	color: var(--ts-text-700);
-}
-
-.ts-my-account-content .woocommerce-orders-table a {
-	color: var(--ts-primary);
-
-	font-weight: 700;
-
-	text-decoration: none;
-}
-
-.ts-my-account-content .woocommerce-MyAccount-content h2 {
-	color: var(--ts-text-950);
-
-	font-size: 22px;
-	font-weight: 800;
-}
-
-.ts-my-account-content .woocommerce-MyAccount-content p {
-	color: var(--ts-text-600);
+.ts-account-content th {
+	color: var(--ts-text, #111827);
 
 	font-size: 13px;
+	font-weight: 800;
+}
 
-	line-height: 1.8;
+.ts-account-content td {
+	color: var(--ts-text-500, #6b7280);
+
+	font-size: 13px;
 }
 
 
-/* Buttons */
+/* =========================================================
+   BUTTONS
+========================================================= */
 
-.ts-my-account-content .button {
+.ts-account .button,
+.ts-account .ts-button {
 	display: inline-flex;
+
 	align-items: center;
 	justify-content: center;
 
-	min-height: 40px;
+	gap: 8px;
 
-	padding: 8px 15px !important;
+	min-height: 46px;
 
-	color: #ffffff !important;
+	padding: 0 18px;
 
-	background: var(--ts-primary) !important;
+	background: var(--ts-primary, #2563eb);
 
-	border: 1px solid var(--ts-primary) !important;
-	border-radius: var(--ts-radius-md) !important;
+	color: #ffffff;
 
-	font-size: 12px !important;
-	font-weight: 800 !important;
+	border: 1px solid var(--ts-primary, #2563eb);
+	border-radius: 10px;
 
-	text-decoration: none !important;
-}
-
-.ts-my-account-content .button:hover {
-	color: #ffffff !important;
-
-	background: var(--ts-primary-hover) !important;
-
-	border-color: var(--ts-primary-hover) !important;
-}
-
-
-/* Forms */
-
-.ts-my-account-content .woocommerce-EditAccountForm input.input-text,
-.ts-my-account-content .woocommerce-address-fields input.input-text,
-.ts-my-account-content .woocommerce-address-fields select,
-.ts-my-account-content .woocommerce-EditAccountForm select {
-	min-height: 44px;
-
-	padding: 9px 12px;
-
-	color: var(--ts-text-800);
-
-	background: #ffffff;
-
-	border: 1px solid var(--ts-border);
-
-	border-radius: var(--ts-radius-md);
-
-	outline: none;
-}
-
-.ts-my-account-content .woocommerce-EditAccountForm input:focus,
-.ts-my-account-content .woocommerce-address-fields input:focus,
-.ts-my-account-content .woocommerce-address-fields select:focus {
-	border-color: var(--ts-primary);
-
-	box-shadow:
-		0 0 0 3px rgba(37, 99, 235, .08);
-}
-
-
-/* Address */
-
-.ts-my-account-content .woocommerce-Addresses {
-	display: grid;
-
-	grid-template-columns:
-		repeat(2, minmax(0, 1fr));
-
-	gap: 18px;
-}
-
-.ts-my-account-content .woocommerce-Address {
-	padding: 20px;
-
-	background: var(--ts-surface-soft);
-
-	border: 1px solid var(--ts-border-light);
-	border-radius: 14px;
-}
-
-.ts-my-account-content .woocommerce-Address-title {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-
-	gap: 15px;
-
-	margin-bottom: 12px;
-}
-
-.ts-my-account-content .woocommerce-Address-title h2 {
-	margin: 0;
-
-	font-size: 17px;
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 900px) {
-
-	.ts-my-account-layout {
-		grid-template-columns: 1fr;
-	}
-
-	.ts-account-navigation {
-		position: static;
-	}
-
-	.ts-account-navigation ul {
-		display: grid;
-
-		grid-template-columns:
-			repeat(2, minmax(0, 1fr));
-
-		gap: 5px;
-	}
-}
-
-@media (max-width: 640px) {
-
-	.ts-my-account {
-		padding: 40px 0 65px;
-	}
-
-	.ts-my-account-content {
-		padding: 20px 16px;
-	}
-
-	.ts-account-cards {
-		grid-template-columns: 1fr;
-	}
-
-	.ts-account-navigation ul {
-		grid-template-columns: 1fr;
-	}
-
-	.ts-my-account-content .woocommerce-Addresses {
-		grid-template-columns: 1fr;
-	}
-
-	.ts-my-account-content .woocommerce-orders-table {
-		display: block;
-
-		overflow-x: auto;
-
-		white-space: nowrap;
-	}
-}
-
-/* =========================================================
-   MY ACCOUNT - ORDERS
-========================================================= */
-
-.ts-my-account-content .woocommerce-orders-table {
-	width: 100%;
-
-	margin: 0;
-
-	border-collapse: separate;
-	border-spacing: 0;
-
-	overflow: hidden;
-
-	background: #ffffff;
-
-	border: 1px solid var(--ts-border-light);
-	border-radius: 14px;
-}
-
-.ts-my-account-content .woocommerce-orders-table thead th {
-	padding: 14px 12px;
-
-	color: var(--ts-text-500);
-
-	background: var(--ts-surface-soft);
-
-	border-bottom: 1px solid var(--ts-border-light);
-
-	font-size: 11px;
+	font-size: 13px;
 	font-weight: 800;
 
-	text-align: right;
+	line-height: 1.4;
+
+	text-decoration: none;
+
+	cursor: pointer;
+
+	transition:
+		background .2s ease,
+		border-color .2s ease,
+		color .2s ease,
+		transform .2s ease,
+		box-shadow .2s ease;
 }
 
-.ts-my-account-content .woocommerce-orders-table tbody td,
-.ts-my-account-content .woocommerce-orders-table tbody th {
-	padding: 15px 12px;
+.ts-account .button:hover,
+.ts-account .ts-button:hover {
+	background: var(--ts-primary-hover, #1d4ed8);
 
-	color: var(--ts-text-700);
+	border-color: var(--ts-primary-hover, #1d4ed8);
 
-	border-bottom: 1px solid var(--ts-border-light);
+	color: #ffffff;
 
-	font-size: 12px;
+	transform: translateY(-1px);
 
-	text-align: right;
+	text-decoration: none;
 }
 
-.ts-my-account-content .woocommerce-orders-table tbody tr:last-child td,
-.ts-my-account-content .woocommerce-orders-table tbody tr:last-child th {
-	border-bottom: 0;
+.ts-account .button:focus-visible,
+.ts-account .ts-button:focus-visible {
+	outline: 3px solid rgba(37, 99, 235, .18);
+
+	outline-offset: 2px;
 }
 
-.ts-my-account-content .woocommerce-orders-table .woocommerce-orders-table__cell-order-number a {
-	color: var(--ts-primary);
+
+/* =========================================================
+   ORDERS
+========================================================= */
+
+.ts-account-orders {
+	width: 100%;
+}
+
+.ts-account-orders .woocommerce-orders-table {
+	margin: 0;
+
+	border: 1px solid rgba(0, 0, 0, .08);
+	border-radius: 16px;
+
+	overflow: hidden;
+}
+
+.ts-account-orders .woocommerce-orders-table__cell-order-number a {
+	color: var(--ts-primary, #2563eb);
 
 	font-weight: 800;
 
 	text-decoration: none;
 }
 
-.ts-my-account-content .woocommerce-orders-table .woocommerce-orders-table__cell-order-number a:hover {
-	color: var(--ts-primary-hover);
+.ts-account-orders .woocommerce-orders-table__cell-order-number a:hover {
+	color: var(--ts-primary-hover, #1d4ed8);
+
+	text-decoration: underline;
 }
 
-
-/* Order status */
-
-.ts-my-account-content .woocommerce-orders-table__row--status-on-hold .woocommerce-orders-table__cell-order-status {
-	color: #b45309;
-
-	font-weight: 800;
-}
-
-.ts-my-account-content .woocommerce-orders-table__row--status-processing .woocommerce-orders-table__cell-order-status {
-	color: #2563eb;
-
-	font-weight: 800;
-}
-
-.ts-my-account-content .woocommerce-orders-table__row--status-completed .woocommerce-orders-table__cell-order-status {
-	color: #15803d;
-
-	font-weight: 800;
-}
-
-.ts-my-account-content .woocommerce-orders-table__row--status-cancelled .woocommerce-orders-table__cell-order-status,
-.ts-my-account-content .woocommerce-orders-table__row--status-failed .woocommerce-orders-table__cell-order-status {
-	color: var(--ts-danger);
-
-	font-weight: 800;
-}
-
-
-/* Order actions */
-
-.ts-my-account-content .woocommerce-orders-table .order-actions {
-	display: flex;
-
-	flex-wrap: wrap;
-
-	gap: 6px;
-}
-
-.ts-my-account-content .woocommerce-orders-table .order-actions .button {
-	min-height: 34px;
-
-	padding: 6px 10px !important;
-
-	font-size: 11px !important;
+.ts-account-orders .woocommerce-orders-table__cell-order-actions {
+	white-space: nowrap;
 }
 
 
@@ -639,178 +422,114 @@
    ORDER DETAILS
 ========================================================= */
 
-.ts-my-account-content .woocommerce-order-details {
-	margin-top: 30px;
-
-	padding-top: 28px;
-
-	border-top: 1px solid var(--ts-border-light);
-}
-
-.ts-my-account-content .woocommerce-order-details__title {
-	margin: 0 0 18px;
-
-	color: var(--ts-text-950);
-
-	font-size: 22px;
-
-	font-weight: 800;
-}
-
-.ts-my-account-content .woocommerce-table--order-details {
-	width: 100%;
-
-	border-collapse: separate;
-	border-spacing: 0;
+.ts-account-order-details {
+	padding: 24px;
 
 	background: #ffffff;
 
-	border: 1px solid var(--ts-border-light);
-	border-radius: 14px;
-
-	overflow: hidden;
+	border: 1px solid rgba(0, 0, 0, .08);
+	border-radius: 18px;
 }
 
-.ts-my-account-content .woocommerce-table--order-details th,
-.ts-my-account-content .woocommerce-table--order-details td {
-	padding: 14px;
+.ts-account-order-details h2 {
+	margin: 0 0 18px;
 
-	border-bottom: 1px solid var(--ts-border-light);
-
-	font-size: 12px;
-
-	text-align: right;
+	font-size: 22px;
 }
 
-.ts-my-account-content .woocommerce-table--order-details th {
-	color: var(--ts-text-500);
-
-	background: var(--ts-surface-soft);
-
-	font-weight: 800;
-}
-
-.ts-my-account-content .woocommerce-table--order-details td {
-	color: var(--ts-text-700);
-}
-
-.ts-my-account-content .woocommerce-table--order-details tr:last-child th,
-.ts-my-account-content .woocommerce-table--order-details tr:last-child td {
-	border-bottom: 0;
-}
-
-.ts-my-account-content .woocommerce-table--order-details .product-name a {
-	color: var(--ts-primary);
-
-	font-weight: 700;
-
-	text-decoration: none;
+.ts-account-order-details .shop_table {
+	margin: 0;
 }
 
 
-/* Customer details */
+/* =========================================================
+   CUSTOMER DETAILS
+========================================================= */
 
-.ts-my-account-content .woocommerce-customer-details {
-	margin-top: 30px;
+.ts-account-customer-details {
+	display: grid;
+
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+
+	gap: 18px;
+
+	margin-top: 24px;
 }
 
-.ts-my-account-content .woocommerce-column__title {
-	margin: 0 0 15px;
+.ts-account-customer-details>div {
+	padding: 22px;
 
-	color: var(--ts-text-950);
+	background: #ffffff;
 
-	font-size: 21px;
-
-	font-weight: 800;
+	border: 1px solid rgba(0, 0, 0, .08);
+	border-radius: 16px;
 }
 
-.ts-my-account-content .woocommerce-customer-details address {
-	padding: 18px;
+.ts-account-customer-details h2 {
+	margin: 0 0 12px;
 
-	color: var(--ts-text-600);
-
-	background: var(--ts-surface-soft);
-
-	border: 1px solid var(--ts-border-light);
-	border-radius: 12px;
-
-	font-size: 12px;
-
-	line-height: 1.8;
+	font-size: 18px;
 }
 
-.ts-my-account-content .woocommerce-customer-details address .woocommerce-customer-details--phone,
-.ts-my-account-content .woocommerce-customer-details address .woocommerce-customer-details--email {
-	display: block;
+.ts-account-customer-details address {
+	margin: 0;
 
-	margin-top: 6px;
-}
-
-
-/* View order status */
-
-.ts-my-account-content .woocommerce-view-order>p:first-child {
-	margin: 0 0 22px;
-
-	padding: 14px 16px;
-
-	color: var(--ts-text-700);
-
-	background: var(--ts-surface-blue);
-
-	border: 1px solid #dbeafe;
-	border-radius: 10px;
+	color: var(--ts-text-500, #6b7280);
 
 	font-size: 13px;
 
-	line-height: 1.8;
-}
+	font-style: normal;
 
-.ts-my-account-content .woocommerce-view-order mark {
-	padding: 2px 5px;
-
-	color: var(--ts-primary);
-
-	background: transparent;
-
-	font-weight: 800;
+	line-height: 1.9;
 }
 
 
-/* Order updates */
+/* =========================================================
+   VIEW ORDER
+========================================================= */
 
-.ts-my-account-content .woocommerce-OrderUpdates {
+.ts-account-view-order {
+	width: 100%;
+}
+
+.ts-account-view-order .woocommerce-order-details,
+.ts-account-view-order .woocommerce-customer-details {
+	margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   ORDER UPDATES
+========================================================= */
+
+.ts-account-order-updates {
+	margin: 24px 0;
+
+	padding: 20px;
+
+	background: rgba(37, 99, 235, .04);
+
+	border: 1px solid rgba(37, 99, 235, .10);
+	border-radius: 16px;
+}
+
+.ts-account-order-updates ul {
 	margin: 0;
 	padding: 0;
 
 	list-style: none;
 }
 
-.ts-my-account-content .woocommerce-OrderUpdate {
-	padding: 16px;
+.ts-account-order-updates li {
+	padding: 10px 0;
 
-	margin-bottom: 10px;
-
-	background: var(--ts-surface-soft);
-
-	border: 1px solid var(--ts-border-light);
-	border-radius: 10px;
+	border-bottom: 1px solid rgba(0, 0, 0, .06);
 }
 
-.ts-my-account-content .woocommerce-OrderUpdate-meta {
-	margin: 0 0 5px;
+.ts-account-order-updates li:last-child {
+	padding-bottom: 0;
 
-	color: var(--ts-text-500);
-
-	font-size: 10px;
-}
-
-.ts-my-account-content .woocommerce-OrderUpdate-description {
-	color: var(--ts-text-600);
-
-	font-size: 12px;
-
-	line-height: 1.8;
+	border-bottom: 0;
 }
 
 
@@ -818,22 +537,65 @@
    ADDRESS
 ========================================================= */
 
-.ts-my-account-content .woocommerce-Addresses {
+.ts-account-addresses {
+	display: grid;
+
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+
+	gap: 18px;
+}
+
+.ts-account-addresses .woocommerce-Address {
+	width: 100%;
+
+	padding: 24px;
+
+	background: #ffffff;
+
+	border: 1px solid rgba(0, 0, 0, .08);
+	border-radius: 18px;
+}
+
+.ts-account-addresses .woocommerce-Address-title {
+	display: flex;
+
+	align-items: center;
+	justify-content: space-between;
+
 	gap: 16px;
+
+	margin-bottom: 16px;
 }
 
-.ts-my-account-content .woocommerce-Address {
-	height: 100%;
-
-	background: var(--ts-surface-soft);
-}
-
-.ts-my-account-content .woocommerce-Address address {
+.ts-account-addresses .woocommerce-Address-title h2 {
 	margin: 0;
 
-	color: var(--ts-text-600);
+	font-size: 18px;
+}
+
+.ts-account-addresses .woocommerce-Address-title .edit {
+	color: var(--ts-primary, #2563eb);
 
 	font-size: 12px;
+	font-weight: 800;
+
+	text-decoration: none;
+}
+
+.ts-account-addresses .woocommerce-Address-title .edit:hover {
+	color: var(--ts-primary-hover, #1d4ed8);
+
+	text-decoration: underline;
+}
+
+.ts-account-addresses address {
+	margin: 0;
+
+	color: var(--ts-text-500, #6b7280);
+
+	font-size: 13px;
+
+	font-style: normal;
 
 	line-height: 1.9;
 }
@@ -843,68 +605,1050 @@
    EDIT ACCOUNT
 ========================================================= */
 
-.ts-my-account-content .woocommerce-EditAccountForm {
-	display: grid;
+.ts-account-edit-form {
+	max-width: 720px;
 
-	grid-template-columns:
-		repeat(2, minmax(0, 1fr));
+	padding: 28px;
 
-	gap: 0 18px;
+	background: #ffffff;
+
+	border: 1px solid rgba(0, 0, 0, .08);
+	border-radius: 18px;
 }
 
-.ts-my-account-content .woocommerce-EditAccountForm .form-row-wide,
-.ts-my-account-content .woocommerce-EditAccountForm fieldset {
-	grid-column: 1 / -1;
+.ts-account-edit-form .form-row {
+	margin-bottom: 18px;
 }
 
-.ts-my-account-content .woocommerce-EditAccountForm fieldset {
-	min-width: 0;
+.ts-account-edit-form label {
+	display: block;
 
-	margin-top: 12px;
+	margin-bottom: 8px;
 
-	padding: 18px;
+	color: var(--ts-text, #111827);
 
-	border: 1px solid var(--ts-border-light);
-	border-radius: 12px;
+	font-size: 13px;
+	font-weight: 800;
 }
 
-.ts-my-account-content .woocommerce-EditAccountForm legend {
+.ts-account-edit-form input.input-text,
+.ts-account-edit-form input[type="text"],
+.ts-account-edit-form input[type="email"],
+.ts-account-edit-form input[type="password"] {
+	width: 100%;
+
+	min-height: 50px;
+
+	padding: 0 14px;
+
+	background: #ffffff;
+
+	color: var(--ts-text, #111827);
+
+	border: 1px solid rgba(0, 0, 0, .12);
+	border-radius: 10px;
+
+	font-size: 14px;
+
+	outline: none;
+
+	transition:
+		border-color .2s ease,
+		box-shadow .2s ease,
+		background .2s ease;
+}
+
+.ts-account-edit-form input.input-text:hover,
+.ts-account-edit-form input[type="text"]:hover,
+.ts-account-edit-form input[type="email"]:hover,
+.ts-account-edit-form input[type="password"]:hover {
+	border-color: rgba(0, 0, 0, .22);
+}
+
+.ts-account-edit-form input.input-text:focus,
+.ts-account-edit-form input[type="text"]:focus,
+.ts-account-edit-form input[type="email"]:focus,
+.ts-account-edit-form input[type="password"]:focus {
+	border-color: var(--ts-primary, #2563eb);
+
+	box-shadow:
+		0 0 0 4px rgba(37, 99, 235, .08);
+}
+
+.ts-account-edit-form fieldset {
+	margin: 24px 0 0;
+
+	padding: 20px;
+
+	border: 1px solid rgba(0, 0, 0, .08);
+	border-radius: 14px;
+}
+
+.ts-account-edit-form legend {
 	padding: 0 8px;
 
-	color: var(--ts-text-950);
+	color: var(--ts-text, #111827);
 
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: 800;
 }
 
 
 /* =========================================================
-   MOBILE ACCOUNT
+   ACCOUNT NOTICE
 ========================================================= */
 
-@media (max-width: 640px) {
+.ts-account .woocommerce-error,
+.ts-account .woocommerce-message,
+.ts-account .woocommerce-info {
+	margin: 0 0 24px;
 
-	.ts-my-account-content .woocommerce-EditAccountForm {
+	padding: 14px 16px;
+
+	border-radius: 12px;
+
+	font-size: 13px;
+
+	line-height: 1.8;
+}
+
+.ts-account .woocommerce-error ul,
+.ts-account .woocommerce-message ul,
+.ts-account .woocommerce-info ul {
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+
+/* =========================================================
+   AUTH / LOGIN / REGISTER
+========================================================= */
+
+.ts-account-auth {
+	width: 100%;
+
+	padding: 64px 0 80px;
+}
+
+.ts-account-auth-header {
+	max-width: 760px;
+
+	margin: 0 auto 40px;
+
+	text-align: center;
+}
+
+.ts-account-eyebrow {
+	display: inline-block;
+
+	margin-bottom: 9px;
+
+	color: var(--ts-primary, #2563eb);
+
+	font-size: 11px;
+	font-weight: 900;
+
+	letter-spacing: .08em;
+
+	line-height: 1.5;
+}
+
+.ts-account-auth-title {
+	margin: 0 0 12px;
+
+	color: var(--ts-text, #111827);
+
+	font-size: clamp(30px, 4vw, 44px);
+	font-weight: 900;
+
+	line-height: 1.15;
+}
+
+.ts-account-auth-description {
+	max-width: 620px;
+
+	margin: 0 auto;
+
+	color: var(--ts-text-500, #6b7280);
+
+	font-size: 14px;
+
+	line-height: 1.9;
+}
+
+
+/* =========================================================
+   AUTH GRID
+========================================================= */
+
+.ts-account-auth-grid {
+	display: grid;
+
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+
+	gap: 24px;
+
+	align-items: start;
+}
+
+.ts-account-auth-grid--login-only {
+	grid-template-columns: minmax(0, 620px);
+
+	justify-content: center;
+}
+
+
+/* =========================================================
+   AUTH CARD
+========================================================= */
+
+.ts-account-auth-card {
+	padding: 34px;
+
+	background: #ffffff;
+
+	border: 1px solid rgba(0, 0, 0, .08);
+	border-radius: 22px;
+
+	box-shadow: 0 14px 40px rgba(0, 0, 0, .06);
+}
+
+.ts-account-auth-card-header {
+	display: flex;
+
+	align-items: flex-start;
+
+	gap: 16px;
+
+	margin-bottom: 28px;
+}
+
+.ts-account-auth-card-number {
+	display: inline-flex;
+
+	align-items: center;
+	justify-content: center;
+
+	flex: 0 0 auto;
+
+	width: 46px;
+	height: 46px;
+
+	background: rgba(37, 99, 235, .08);
+
+	color: var(--ts-primary, #2563eb);
+
+	border-radius: 13px;
+
+	font-size: 13px;
+	font-weight: 900;
+
+	line-height: 1;
+}
+
+.ts-account-auth-card-header h2 {
+	margin: 0 0 7px;
+
+	color: var(--ts-text, #111827);
+
+	font-size: 25px;
+	font-weight: 900;
+
+	line-height: 1.3;
+}
+
+.ts-account-auth-card-header p {
+	margin: 0;
+
+	color: var(--ts-text-500, #6b7280);
+
+	font-size: 13px;
+
+	line-height: 1.8;
+}
+
+
+/* =========================================================
+   AUTH FORM
+========================================================= */
+
+.ts-account-auth-form {
+	margin: 0;
+}
+
+.ts-account-auth-field {
+	margin: 0 0 18px;
+}
+
+.ts-account-auth-field label {
+	display: block;
+
+	margin-bottom: 8px;
+
+	color: var(--ts-text, #111827);
+
+	font-size: 13px;
+	font-weight: 800;
+
+	line-height: 1.5;
+}
+
+.ts-account-auth-field .required {
+	color: #dc2626;
+
+	font-weight: 900;
+}
+
+.ts-account-auth-field input[type="text"],
+.ts-account-auth-field input[type="email"],
+.ts-account-auth-field input[type="password"] {
+	width: 100%;
+
+	min-height: 52px;
+
+	padding: 0 14px;
+
+	background: #ffffff;
+
+	color: var(--ts-text, #111827);
+
+	border: 1px solid rgba(0, 0, 0, .12);
+	border-radius: 11px;
+
+	font-size: 14px;
+
+	outline: none;
+
+	transition:
+		border-color .2s ease,
+		box-shadow .2s ease,
+		background .2s ease;
+}
+
+.ts-account-auth-field input[type="text"]:hover,
+.ts-account-auth-field input[type="email"]:hover,
+.ts-account-auth-field input[type="password"]:hover {
+	border-color: rgba(0, 0, 0, .22);
+}
+
+.ts-account-auth-field input[type="text"]:focus,
+.ts-account-auth-field input[type="email"]:focus,
+.ts-account-auth-field input[type="password"]:focus {
+	border-color: var(--ts-primary, #2563eb);
+
+	box-shadow:
+		0 0 0 4px rgba(37, 99, 235, .08);
+}
+
+
+/* =========================================================
+   AUTH OPTIONS
+========================================================= */
+
+.ts-account-auth-options {
+	display: flex;
+
+	align-items: center;
+	justify-content: space-between;
+
+	gap: 16px;
+
+	margin: 4px 0 22px;
+}
+
+.ts-account-remember {
+	display: inline-flex;
+
+	align-items: center;
+
+	gap: 8px;
+
+	color: var(--ts-text-500, #6b7280);
+
+	font-size: 12px;
+
+	line-height: 1.5;
+
+	cursor: pointer;
+}
+
+.ts-account-remember input {
+	margin: 0;
+
+	accent-color: var(--ts-primary, #2563eb);
+}
+
+.ts-account-lost-password {
+	color: var(--ts-primary, #2563eb);
+
+	font-size: 12px;
+	font-weight: 800;
+
+	text-decoration: none;
+
+	transition: color .2s ease;
+}
+
+.ts-account-lost-password:hover,
+.ts-account-lost-password:focus-visible {
+	color: var(--ts-primary-hover, #1d4ed8);
+
+	text-decoration: underline;
+}
+
+
+/* =========================================================
+   AUTH SUBMIT
+========================================================= */
+
+.ts-account-auth-submit {
+	margin-top: 8px;
+}
+
+.ts-account-auth-submit .ts-button,
+.ts-account-auth-submit .woocommerce-button,
+.ts-account-auth-submit button[type="submit"] {
+	width: 100%;
+
+	min-height: 52px;
+}
+
+.ts-account-auth-submit .ts-button span {
+	display: inline-flex;
+
+	align-items: center;
+
+	font-size: 16px;
+
+	transition: transform .2s ease;
+}
+
+.ts-account-auth-submit .ts-button:hover span {
+	transform: translateX(-2px);
+}
+
+
+/* =========================================================
+   REGISTER NOTICE
+========================================================= */
+
+.ts-account-register-notice {
+	margin-top: 20px;
+
+	padding: 14px 16px;
+
+	background: rgba(0, 0, 0, .025);
+
+	border: 1px solid rgba(0, 0, 0, .06);
+	border-radius: 12px;
+
+	color: var(--ts-text-500, #6b7280);
+
+	font-size: 12px;
+
+	line-height: 1.8;
+}
+
+
+/* =========================================================
+   PASSWORD STRENGTH / HINT
+========================================================= */
+
+.ts-account-auth .woocommerce-password-strength {
+	margin: 8px 0 0;
+
+	padding: 8px 10px;
+
+	border-radius: 8px;
+
+	font-size: 11px;
+	font-weight: 700;
+
+	line-height: 1.6;
+}
+
+.ts-account-auth .woocommerce-password-hint {
+	margin: 8px 0 0;
+
+	color: var(--ts-text-500, #6b7280);
+
+	font-size: 11px;
+
+	line-height: 1.7;
+}
+
+
+/* =========================================================
+   WOOCOMMERCE LOGIN / REGISTER SUBMIT
+========================================================= */
+
+.ts-account-auth .woocommerce-form-login__submit,
+.ts-account-auth .woocommerce-form-register__submit {
+	width: 100%;
+
+	min-height: 52px;
+
+	margin: 0;
+
+	background: var(--ts-primary, #2563eb);
+
+	color: #ffffff;
+
+	border: 1px solid var(--ts-primary, #2563eb);
+	border-radius: 10px;
+
+	font-size: 13px;
+	font-weight: 800;
+
+	cursor: pointer;
+
+	transition:
+		background .2s ease,
+		border-color .2s ease,
+		transform .2s ease;
+}
+
+.ts-account-auth .woocommerce-form-login__submit:hover,
+.ts-account-auth .woocommerce-form-register__submit:hover {
+	background: var(--ts-primary-hover, #1d4ed8);
+
+	border-color: var(--ts-primary-hover, #1d4ed8);
+
+	transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   AUTH NOTICES
+========================================================= */
+
+.ts-account-auth .woocommerce-error,
+.ts-account-auth .woocommerce-message,
+.ts-account-auth .woocommerce-info {
+	margin: 0 0 24px;
+}
+
+
+/* =========================================================
+   LOGIN ONLY
+========================================================= */
+
+.ts-account-auth-grid--login-only .ts-account-login-card {
+	width: 100%;
+}
+
+
+/* =========================================================
+   LOST PASSWORD
+========================================================= */
+
+.ts-account-lost-password {
+	max-width: 1180px;
+
+	margin: 0 auto;
+
+	padding: 64px 0 80px;
+}
+
+.ts-account-lost-password-card {
+	max-width: 620px;
+
+	margin: 0 auto;
+
+	padding: 34px;
+
+	background: #ffffff;
+
+	border: 1px solid rgba(0, 0, 0, .08);
+	border-radius: 22px;
+
+	box-shadow: 0 14px 40px rgba(0, 0, 0, .06);
+}
+
+
+/* =========================================================
+   LOST PASSWORD FORM
+========================================================= */
+
+.ts-account-lost-password .woocommerce-ResetPassword {
+	margin: 0;
+}
+
+.ts-account-lost-password .ts-account-auth-field {
+	margin: 0 0 12px;
+}
+
+.ts-account-lost-password .ts-account-auth-field input.input-text {
+	border-color: rgba(0, 0, 0, .14);
+}
+
+.ts-account-lost-password .ts-account-auth-field input.input-text:hover {
+	border-color: rgba(0, 0, 0, .22);
+}
+
+.ts-account-lost-password .ts-account-auth-field input.input-text:focus {
+	border-color: var(--ts-primary, #2563eb);
+
+	box-shadow:
+		0 0 0 4px rgba(37, 99, 235, .08);
+}
+
+
+/* =========================================================
+   LOST PASSWORD HELP TEXT
+========================================================= */
+
+.ts-account-lost-password-help {
+	margin: 0 0 22px;
+
+	color: var(--ts-text-500, #6b7280);
+
+	font-size: 13px;
+
+	line-height: 1.8;
+}
+
+
+/* =========================================================
+   LOST PASSWORD SUBMIT
+========================================================= */
+
+.ts-account-lost-password .ts-account-auth-submit {
+	margin-top: 0;
+}
+
+.ts-account-lost-password .ts-account-auth-submit .ts-button {
+	background: var(--ts-primary, #2563eb);
+
+	color: #ffffff;
+
+	border: 1px solid var(--ts-primary, #2563eb);
+}
+
+.ts-account-lost-password .ts-account-auth-submit .ts-button:hover {
+	background: var(--ts-primary-hover, #1d4ed8);
+
+	border-color: var(--ts-primary-hover, #1d4ed8);
+}
+
+.ts-account-lost-password .ts-account-auth-submit .ts-button:focus-visible {
+	outline-color: rgba(37, 99, 235, .25);
+}
+
+
+/* =========================================================
+   LOST PASSWORD NOTICES
+========================================================= */
+
+.ts-account-lost-password .woocommerce-error,
+.ts-account-lost-password .woocommerce-message,
+.ts-account-lost-password .woocommerce-info {
+	margin: 0 0 24px;
+
+	padding: 14px 16px;
+
+	border-radius: 12px;
+
+	font-size: 13px;
+
+	line-height: 1.8;
+}
+
+
+/* =========================================================
+   BACK TO LOGIN
+========================================================= */
+
+.ts-account-lost-password-back {
+	display: flex;
+
+	justify-content: center;
+
+	margin-top: 20px;
+}
+
+.ts-account-lost-password-back .ts-account-secondary-link {
+	display: inline-flex;
+
+	align-items: center;
+
+	gap: 7px;
+
+	color: var(--ts-primary, #2563eb);
+
+	font-size: 13px;
+	font-weight: 800;
+
+	line-height: 1.5;
+
+	text-decoration: none;
+
+	transition:
+		color .2s ease,
+		transform .2s ease;
+}
+
+.ts-account-lost-password-back .ts-account-secondary-link:hover,
+.ts-account-lost-password-back .ts-account-secondary-link:focus-visible {
+	color: var(--ts-primary-hover, #1d4ed8);
+
+	transform: translateX(2px);
+
+	text-decoration: none;
+
+	outline: none;
+}
+
+/* =========================================================
+   AUTH RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+	.ts-account-inner {
+		width: min(100% - 32px, 1180px);
+	}
+
+	.ts-account-layout {
+		grid-template-columns: 1fr;
+
+		gap: 24px;
+	}
+
+	.ts-account-navigation {
+		position: static;
+	}
+
+	.ts-account-navigation ul {
+		display: grid;
+
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+
+		gap: 6px;
+	}
+
+	.ts-account-dashboard-cards {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.ts-account-auth {
+		padding: 48px 0 60px;
+	}
+
+	.ts-account-auth-grid {
 		grid-template-columns: 1fr;
 	}
 
-	.ts-my-account-content .woocommerce-orders-table {
+	.ts-account-auth-grid--login-only {
+		grid-template-columns: 1fr;
+	}
+
+	.ts-account-auth-card {
+		padding: 28px;
+	}
+
+	.ts-account-lost-password {
+		padding: 48px 0 60px;
+	}
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+	.ts-account-dashboard-cards {
+		grid-template-columns: 1fr;
+	}
+
+	.ts-account-summary {
+		grid-template-columns: 1fr;
+	}
+
+	.ts-account-customer-details {
+		grid-template-columns: 1fr;
+	}
+
+	.ts-account-addresses {
+		grid-template-columns: 1fr;
+	}
+
+	.ts-account-content table {
 		display: block;
 
 		overflow-x: auto;
 
-		white-space: nowrap;
+		-webkit-overflow-scrolling: touch;
 	}
 
-	.ts-my-account-content .woocommerce-orders-table .order-actions {
-		white-space: normal;
+	.ts-account-content table thead,
+	.ts-account-content table tbody {
+		min-width: 650px;
 	}
 
-	.ts-my-account-content .woocommerce-table--order-details {
-		display: block;
+}
 
-		overflow-x: auto;
 
-		white-space: nowrap;
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+	.ts-account-inner {
+		width: min(100% - 24px, 1180px);
 	}
+
+	.ts-account-navigation {
+		padding: 12px;
+
+		border-radius: 14px;
+	}
+
+	.ts-account-navigation ul {
+		grid-template-columns: 1fr;
+	}
+
+	.ts-account-navigation a {
+		min-height: 44px;
+
+		padding: 0 12px;
+
+		font-size: 13px;
+	}
+
+	.ts-account-dashboard-header {
+		margin-bottom: 22px;
+	}
+
+	.ts-account-dashboard-title {
+		font-size: 28px;
+	}
+
+	.ts-account-dashboard-description {
+		font-size: 13px;
+	}
+
+	.ts-account-dashboard-card {
+		min-height: 130px;
+
+		padding: 18px;
+
+		border-radius: 15px;
+	}
+
+	.ts-account-dashboard-card-value {
+		font-size: 24px;
+	}
+
+	.ts-account-summary-card {
+		padding: 18px;
+
+		border-radius: 15px;
+	}
+
+	.ts-account-customer-details>div {
+		padding: 18px;
+
+		border-radius: 15px;
+	}
+
+	.ts-account-addresses .woocommerce-Address {
+		padding: 18px;
+
+		border-radius: 15px;
+	}
+
+	.ts-account-addresses .woocommerce-Address-title {
+		align-items: flex-start;
+
+		flex-direction: column;
+
+		gap: 8px;
+	}
+
+	.ts-account-edit-form {
+		padding: 20px;
+
+		border-radius: 15px;
+	}
+
+
+	/* =====================================================
+	   AUTH
+	===================================================== */
+
+	.ts-account-auth {
+		padding: 36px 0 48px;
+	}
+
+	.ts-account-auth-header {
+		margin-bottom: 30px;
+	}
+
+	.ts-account-auth-title {
+		font-size: 30px;
+	}
+
+	.ts-account-auth-description {
+		font-size: 14px;
+	}
+
+	.ts-account-auth-card {
+		padding: 22px 18px;
+
+		border-radius: 18px;
+	}
+
+	.ts-account-auth-card-header {
+		gap: 13px;
+
+		margin-bottom: 24px;
+	}
+
+	.ts-account-auth-card-number {
+		width: 42px;
+		height: 42px;
+
+		border-radius: 12px;
+
+		font-size: 13px;
+	}
+
+	.ts-account-auth-card-header h2 {
+		font-size: 23px;
+	}
+
+	.ts-account-auth-card-header p {
+		font-size: 12px;
+	}
+
+	.ts-account-auth-options {
+		flex-direction: column;
+
+		align-items: flex-start;
+
+		gap: 10px;
+	}
+
+	.ts-account-auth-field input[type="text"],
+	.ts-account-auth-field input[type="email"],
+	.ts-account-auth-field input[type="password"] {
+		min-height: 50px;
+	}
+
+	.ts-account-auth-submit .ts-button,
+	.ts-account-auth-submit .woocommerce-button,
+	.ts-account-auth-submit button[type="submit"] {
+		min-height: 50px;
+	}
+
+
+	/* =====================================================
+	   LOST PASSWORD
+	===================================================== */
+
+	.ts-account-lost-password {
+		padding: 36px 0 48px;
+	}
+
+	.ts-account-lost-password-card {
+		padding: 22px 18px;
+
+		border-radius: 18px;
+	}
+
+	.ts-account-lost-password-help {
+		font-size: 12px;
+	}
+
+	.ts-account-lost-password .ts-account-auth-submit .ts-button {
+		min-height: 50px;
+	}
+
+	.ts-account-lost-password-back {
+		margin-top: 18px;
+	}
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+	.ts-account-inner {
+		width: min(100% - 20px, 1180px);
+	}
+
+	.ts-account-auth-title {
+		font-size: 27px;
+	}
+
+	.ts-account-auth-card {
+		padding: 20px 15px;
+	}
+
+	.ts-account-auth-card-header {
+		gap: 10px;
+	}
+
+	.ts-account-auth-card-number {
+		width: 38px;
+		height: 38px;
+
+		border-radius: 10px;
+
+		font-size: 12px;
+	}
+
+	.ts-account-auth-card-header h2 {
+		font-size: 21px;
+	}
+
+	.ts-account-lost-password-card {
+		padding: 20px 15px;
+	}
+
+	.ts-account-lost-password .ts-account-auth-card-header h2 {
+		font-size: 21px;
+	}
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+	.ts-account-navigation a,
+	.ts-account-dashboard-card,
+	.ts-account .button,
+	.ts-account .ts-button,
+	.ts-account-auth-field input[type="text"],
+	.ts-account-auth-field input[type="email"],
+	.ts-account-auth-field input[type="password"],
+	.ts-account-auth-submit .ts-button,
+	.ts-account-auth-submit .ts-button span,
+	.ts-account-lost-password-back .ts-account-secondary-link {
+		transition: none;
+	}
+
+	.ts-account-dashboard-card:hover,
+	.ts-account .button:hover,
+	.ts-account .ts-button:hover,
+	.ts-account-auth-submit .ts-button:hover,
+	.ts-account-lost-password-back .ts-account-secondary-link:hover {
+		transform: none;
+	}
+
 }
